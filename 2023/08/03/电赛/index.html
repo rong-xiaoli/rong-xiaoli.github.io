@@ -6,7 +6,7 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>电赛 | 容小狸的博客</title>
+  <title>容小狸的博客</title>
   <meta name="author" content="Rong Xiaoli">
   
   <meta name="description" content="Day 1我们组选了个B题，同轴电缆长度与终端负载检测上午还真没啥事，8点等题，上午买买器材，吃个午饭
@@ -14,12 +14,16 @@
 
 向同轴电缆发一道脉冲，由于一端开路，同轴电缆会反弹一道脉冲，这就意味着在同轴线一端测量波形，我们能得到两个波形：一个是发射波，一个是反弹波。
 
-GitHub上捞了个代码，">
+GitHub上捞了个代码，但是ChibiOS&amp;#x2F;os&amp;#x2F;hal&amp;#x2F;ports&amp;#x2F;STM32&amp;#x2F;STM32F0xx&amp;#x2F;hal_lld.c报错，换成另一个就搞定了（第二个现在还在更新，而且两个差别其实不是特别大，我们就可以比较方便地套用了）
+主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。我们也是有能干起来的活的，比如测量的UI，不知道我能不能帮的上忙。（我C稀碎，而且python也是完全不会）
+睡觉了，等第二天器材到了就开始忙了。
+Day 2快递早上就到了，接下来就是用micropython对NanoVNC的操作了。
+之前没搞过micropython，踩了一些坑，跟着这篇文章走了一遍，就能上了。首先是环境，安装所需的requirements，然后看到有个模块叫machine这个模块是micropython生成的，所以应该这么搞：进入虚拟环境："> 
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="电赛"/>
+  
   <meta property="og:site_name" content="容小狸的博客"/>
 
   
@@ -101,7 +105,7 @@ GitHub上捞了个代码，">
 		  </li>
 		  
 		  <li>
-			<a href="/atom.xml" title="其实没有RSS，模板有，那就放着吧">
+			<a href="/" title="其实没有RSS，模板有，那就放着吧">
 			  <i class=""></i>RSS
 			</a>
 		  </li>
@@ -119,7 +123,7 @@ GitHub上捞了个代码，">
 
 	
 		<div class="page-header">
-			<h1> 电赛</h1>
+			<h1> </h1>
 		</div>
 	
 
@@ -142,8 +146,34 @@ GitHub上捞了个代码，">
 <p>向同轴电缆发一道脉冲，由于一端开路，同轴电缆会反弹一道脉冲，这就意味着在同轴线一端测量波形，我们能得到两个波形：一个是发射波，一个是反弹波。</p>
 </blockquote>
 <p>GitHub上捞了个<a target="_blank" rel="noopener" href="https://github.com/hugen79/NanoVNA-H">代码</a>，但是ChibiOS&#x2F;os&#x2F;hal&#x2F;ports&#x2F;STM32&#x2F;STM32F0xx&#x2F;hal_lld.c报错，换成<a target="_blank" rel="noopener" href="https://github.com/DiSlord/NanoVNA-D">另一个</a>就搞定了（第二个现在还在更新，而且两个差别其实不是特别大，我们就可以比较方便地套用了）</p>
-<p>主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。<br>我们也是有能干起来的活的，比如测量的UI，我们两个队的佬们在写，他们把源代码拉到本地服务器的GitLab上去在写，不知道我能不能帮的上忙。（我C稀碎）</p>
+<p>主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。<br>我们也是有能干起来的活的，比如测量的UI，不知道我能不能帮的上忙。（我C稀碎，而且python也是完全不会）</p>
 <p>睡觉了，等第二天器材到了就开始忙了。</p>
+<h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><p>快递早上就到了，接下来就是用micropython对NanoVNC的操作了。</p>
+<p>之前没搞过micropython，踩了一些坑，跟着<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/366411699">这篇文章</a>走了一遍，就能上了。<br>首先是环境，安装所需的requirements，然后看到有个模块叫machine<br>这个模块是micropython生成的，所以应该这么搞：<br>进入虚拟环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ./venv/bin/activate</span><br></pre></td></tr></table></figure>
+<p>Windows：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./venv/scripts/activate.bat</span><br></pre></td></tr></table></figure>
+<p>之后（使用阿里云的镜像加速）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install micropy-cli esptool -i https://mirrors.aliyun.com/pypi/simple</span><br></pre></td></tr></table></figure>
+
+<p>擦除ESP32S3的固件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">esptool.py --chip esp32s3 --port /dev/yourDevice erase_flash</span><br></pre></td></tr></table></figure>
+<p>将micropython的固件刷上ESP32：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">esptool.py --chip esp32s3 --port /dev/youtDevice write_flash -z 0 /path/to/BIN_FILE.bin</span><br></pre></td></tr></table></figure>
+<p>串口连接ESP32S3，波特率115200，就可以了。</p>
+<p>第一天的时候其实是这样的：打算使用官方的开源代码进行逆向，获取数据。今天找到了这个：<br>有这个软件：<a target="_blank" rel="noopener" href="https://github.com/NanoVNA-Saver/nanovna-saver">NanoVNA-Saver</a>，是在Windows、Linux和MacOS上用于提取NanoVNA的数据的，也就是说NanoVNA-H使用串口进行调试，那么就可以通过串口指令提取数据：</p>
+<blockquote>
+<p>A multiplatform tool to save Touchstone files from the NanoVNA, sweep frequency spans in segments to gain more than 101 data points, and generally display and analyze the resulting data.</p>
+</blockquote>
+<blockquote>
+<p>This software connects to a NanoVNA and extracts the data for display on a computer and allows saving the sweep data to Touchstone files.</p>
+</blockquote>
+<p>接下来就是串口截取数据了。Windows下可以使用<a target="_blank" rel="noopener" href="http://www.ceiwei.com/mt/">CommMonitor</a>进行监视，Linux一开始用的是这个<a target="_blank" rel="noopener" href="https://github.com/chipkin/Linux-HighSpeedSerialMonitor/">“HighSpeedSerialMonitor”</a>，但是用这个的话会报错闪退，ERROR - too many retries。我猜估计是占用问题，Windows下那个CommMonitor就没有问题。<br>搜到stackexchange.com貌似有个<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/12359/how-can-i-monitor-serial-port-traffic">类似问题的帖子</a>，提到：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.google.com/search?q=socat+serial+port+pty+tee+debug">Googling</a> “socat serial port pty tee debug” will point you to several “standard procedure” examples, one being:</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">socat  /dev/ttyS0,raw,<span class="built_in">echo</span>=0  \</span><br><span class="line">	SYSTEM:<span class="string">&#x27;tee in.txt | socat - &quot;PTY,link=/tmp/ttyV0,raw,echo=0,waitslave&quot; | tee out.txt&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>貌似没问题，时间来不及了，没时间验证，明天再说。<br>明天要验证socat端口转发，两个佬晚上通宵搞定软件和硬件，明天写完论文就搞定了。</p>
 
 	  <div class="article-footer-copyright">
 
@@ -208,14 +238,6 @@ GitHub上捞了个代码，">
     
 
 	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags]/电赛/">电赛<span>1</span></a></li>
-    </ul>
-	</div>
 		
 
 	<!-- toc -->

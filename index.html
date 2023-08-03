@@ -94,7 +94,7 @@
 		  </li>
 		  
 		  <li>
-			<a href="/atom.xml" title="其实没有RSS，模板有，那就放着吧">
+			<a href="/" title="其实没有RSS，模板有，那就放着吧">
 			  <i class=""></i>RSS
 			</a>
 		  </li>
@@ -137,7 +137,7 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2023/08/03/电赛/" >电赛</a>
+			<a href="/2023/08/03/电赛/" ></a>
 		</h3>
 		</div>
 	<div class="col-md-4">
@@ -157,9 +157,10 @@
 <p>向同轴电缆发一道脉冲，由于一端开路，同轴电缆会反弹一道脉冲，这就意味着在同轴线一端测量波形，我们能得到两个波形：一个是发射波，一个是反弹波。</p>
 </blockquote>
 <p>GitHub上捞了个<a target="_blank" rel="noopener" href="https://github.com/hugen79/NanoVNA-H">代码</a>，但是ChibiOS&#x2F;os&#x2F;hal&#x2F;ports&#x2F;STM32&#x2F;STM32F0xx&#x2F;hal_lld.c报错，换成<a target="_blank" rel="noopener" href="https://github.com/DiSlord/NanoVNA-D">另一个</a>就搞定了（第二个现在还在更新，而且两个差别其实不是特别大，我们就可以比较方便地套用了）</p>
-<p>主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。<br>我们也是有能干起来的活的，比如测量的UI，我们两个队的佬们在写，他们把源代码拉到本地服务器的GitLab上去在写，不知道我能不能帮的上忙。（我C稀碎）</p>
+<p>主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。<br>我们也是有能干起来的活的，比如测量的UI，不知道我能不能帮的上忙。（我C稀碎，而且python也是完全不会）</p>
 <p>睡觉了，等第二天器材到了就开始忙了。</p>
-
+<h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><p>快递早上就到了，接下来就是用micropython对NanoVNC的操作了。</p>
+<p>之前没搞过micropython，踩了一些坑，跟着<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/366411699">这篇文章</a>走了一遍，就能上了。<br>首先是环境，安装所需的requirements，然后看到有个模块叫machine<br>这个模块是micropython生成的，所以应该这么搞：<br>进入虚拟环境：</p>
 	
 	</div>
   <a type="button" href="/2023/08/03/电赛/#more" class="btn btn-default more">Read More</a>
@@ -269,8 +270,6 @@
 		
 			<li><a href="/tags]/RongXiaoliBot/">RongXiaoliBot<span>1</span></a></li>
 		
-			<li><a href="/tags]/电赛/">电赛<span>1</span></a></li>
-		
 		 
 		</ul>
 	</div>
@@ -283,7 +282,7 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2023/08/03/电赛/" ><i class="fa fa-file-o"></i>电赛</a>
+        <a href="/2023/08/03/电赛/" ><i class="fa fa-file-o"></i></a>
       </li>
     
       <li>
