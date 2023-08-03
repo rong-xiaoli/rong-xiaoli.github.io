@@ -1,230 +1,285 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
-  
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
   
   <title>RongXiaoliBotv0.2.1 | 容小狸的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="容小狸bot v0.2.1更新日志 工程中 osu!bot(插件名称OsuBot); backend&#x2F;Network&#x2F;HttpGet 和 backend&#x2F;Network&#x2F;HttpsGet 添加headers支持">
-<meta property="og:type" content="article">
-<meta property="og:title" content="RongXiaoliBotv0.2.1">
-<meta property="og:url" content="http://example.com/2023/03/21/RongXiaoliBotv0-2-1/index.html">
-<meta property="og:site_name" content="容小狸的博客">
-<meta property="og:description" content="容小狸bot v0.2.1更新日志 工程中 osu!bot(插件名称OsuBot); backend&#x2F;Network&#x2F;HttpGet 和 backend&#x2F;Network&#x2F;HttpsGet 添加headers支持">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-20T16:30:27.000Z">
-<meta property="article:modified_time" content="2023-03-20T16:33:54.205Z">
-<meta property="article:author" content="Rong Xiaoli">
-<meta property="article:tag" content="RongXiaoliBot">
-<meta name="twitter:card" content="summary">
+  <meta name="author" content="Rong Xiaoli">
   
-    <link rel="alternate" href="/atom.xml" title="容小狸的博客" type="application/atom+xml">
+  <meta name="description" content="容小狸bot v0.2.1更新日志
+工程中
+osu!bot(插件名称OsuBot);
+backend&amp;#x2F;Network&amp;#x2F;HttpGet 和 backend&amp;#x2F;Network&amp;#x2F;HttpsGet 添加headers支持">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="RongXiaoliBotv0.2.1"/>
+  <meta property="og:site_name" content="容小狸的博客"/>
 
   
+    <meta property="og:image" content=""/>
   
-<link rel="stylesheet" href="/css/style.css">
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
+    <link rel="alternative" href="/atom.xml" title="容小狸的博客" type="application/atom+xml">
   
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/prism.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">容小狸的博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">容小狸的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文档">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="全部分类">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="全部标签">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我？我有什么值得注意的？">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="其实没有RSS，模板有，那就放着吧">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
       </div>
-    </div>
-  </div>
-</header>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
 
-      <div class="outer">
-        <section id="main"><article id="post-RongXiaoliBotv0-2-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/21/RongXiaoliBotv0-2-1/" class="article-date">
-  <time class="dt-published" datetime="2023-03-20T16:30:27.000Z" itemprop="datePublished">2023-03-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      RongXiaoliBotv0.2.1
-    </h1>
-  
+  <div class="container">
+  	<div class="content">
+    	 
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="容小狸bot-v0-2-1更新日志"><a href="#容小狸bot-v0-2-1更新日志" class="headerlink" title="容小狸bot v0.2.1更新日志"></a>容小狸bot v0.2.1更新日志</h1><hr>
+
+	
+		<div class="page-header">
+			<h1> RongXiaoliBotv0.2.1</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="容小狸bot-v0-2-1更新日志"><a href="#容小狸bot-v0-2-1更新日志" class="headerlink" title="容小狸bot v0.2.1更新日志"></a>容小狸bot v0.2.1更新日志</h1><hr>
 <h2 id="工程中"><a href="#工程中" class="headerlink" title="工程中"></a>工程中</h2><ul>
 <li>osu!bot(插件名称OsuBot);</li>
 <li>backend&#x2F;Network&#x2F;HttpGet 和 backend&#x2F;Network&#x2F;HttpsGet 添加headers支持</li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/21/RongXiaoliBotv0-2-1/" data-id="clfh1r31w0000tkxr3aay79iu" data-title="RongXiaoliBotv0.2.1" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RongXiaoliBot/" rel="tag">RongXiaoliBot</a></li></ul>
+	  <div class="article-footer-copyright">
 
-    </footer>
-  </div>
-  
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
     
-<nav id="article-nav">
-  
-  
-    <a href="/2023/03/01/FirstPost/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">第一篇post</div>
-    </a>
-  
-</nav>
+    
+    <a href="/2023/08/03/电赛/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
 
-  
-</article>
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2023/03/01/FirstPost/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
 
 
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
 </section>
-        
-          <aside id="sidebar">
-  
+
+-->
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-03-21 
+	</div>
+	
+
+	<!-- categories -->
     
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/RongXiaoliBot/" rel="tag">RongXiaoliBot</a></li></ul>
-    </div>
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags]/RongXiaoliBot/">RongXiaoliBot<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
   </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2023 Rong Xiaoli's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/RongXiaoliBot/" style="font-size: 10px;">RongXiaoliBot</a>
-    </div>
-  </div>
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
-    </div>
-  </div>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/03/21/RongXiaoliBotv0-2-1/">RongXiaoliBotv0.2.1</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/01/FirstPost/">第一篇post</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 Rong Xiaoli<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 
 
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
 
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
-</html>
+   </html>

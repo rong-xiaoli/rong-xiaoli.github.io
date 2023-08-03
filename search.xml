@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>电赛</title>
+      <link href="/2023/08/03/%E7%94%B5%E8%B5%9B/"/>
+      <url>/2023/08/03/%E7%94%B5%E8%B5%9B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h2><p>我们组选了个B题，同轴电缆长度与终端负载检测<br>上午还真没啥事，8点等题，上午买买器材，吃个午饭</p><p>同轴电缆长度测定原理：</p><blockquote><p>向同轴电缆发一道脉冲，由于一端开路，同轴电缆会反弹一道脉冲，这就意味着在同轴线一端测量波形，我们能得到两个波形：一个是发射波，一个是反弹波。</p></blockquote><p>GitHub上捞了个<a href="https://github.com/hugen79/NanoVNA-H">代码</a>，但是ChibiOS&#x2F;os&#x2F;hal&#x2F;ports&#x2F;STM32&#x2F;STM32F0xx&#x2F;hal_lld.c报错，换成<a href="https://github.com/DiSlord/NanoVNA-D">另一个</a>就搞定了（第二个现在还在更新，而且两个差别其实不是特别大，我们就可以比较方便地套用了）</p><p>主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。<br>我们也是有能干起来的活的，比如测量的UI，我们两个队的佬们在写，他们把源代码拉到本地服务器的GitLab上去在写，不知道我能不能帮的上忙。（我C稀碎）</p><p>睡觉了，等第二天器材到了就开始忙了。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RongXiaoliBotv0.2.1</title>
+      <link href="/2023/03/21/RongXiaoliBotv0-2-1/"/>
+      <url>/2023/03/21/RongXiaoliBotv0-2-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="容小狸bot-v0-2-1更新日志"><a href="#容小狸bot-v0-2-1更新日志" class="headerlink" title="容小狸bot v0.2.1更新日志"></a>容小狸bot v0.2.1更新日志</h1><hr><h2 id="工程中"><a href="#工程中" class="headerlink" title="工程中"></a>工程中</h2><ul><li>osu!bot(插件名称OsuBot);</li><li>backend&#x2F;Network&#x2F;HttpGet 和 backend&#x2F;Network&#x2F;HttpsGet 添加headers支持</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> RongXiaoliBot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一篇post</title>
+      <link href="/2023/03/01/FirstPost/"/>
+      <url>/2023/03/01/FirstPost/</url>
+      
+        <content type="html"><![CDATA[<h1 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h1><p>这个GitHub的个人主页可以说是存在已久，但是最近想捞出来一用，于是就搞了个博客。</p><p>随便记点东西，可能会把容小狸Bot的更新日志发上来，也可能记载一些奇奇怪怪的教程与心得吧。</p><p>着实希望未来可期。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
