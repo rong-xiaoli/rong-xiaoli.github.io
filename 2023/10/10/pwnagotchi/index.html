@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <!-- google analytics -->
+  <meta name="google-site-verification" content="DcvKYP3aUT2r5C_9liWXDU7Hfaj8-0llUB0-Wr0J9l8" />
+  <!-- google analytics end -->
+  <!-- baidu analytics -->
+  <meta name="baidu-site-verification" content="codeva-EnHVSvuTxv" />
+  <!-- baidu analytics end -->
+  <!-- bing analytics -->
+  <meta name="msvalidate.01" content="59B362C3958F9B77C547452838F82199" />
+  <!-- bing analytics end -->
+  
+  <title>pwnagotchi | 容小狸的博客</title>
+  <meta name="author" content="Rong Xiaoli">
+  
+  <meta name="description" content="Pwnagotchi官网这个小东西可耗精力了，不知道为什么老是有问题，或许是我墨水屏买新了？以及进不去MANU mode，可能是驱动？不知道，以后再说吧。
+
+0x0 买需要买的：
+
+Raspberry Pi Zero W
+16GB MicroSD卡还要用的：
+MicroSD读卡器
+数据线锦上添花的：
+2.13inch墨水屏，我用了微雪的V4，不过底下那个镜像也支持？
+UPS-Lite 电池&amp;#x2F;不间断电源，这个可以用充电宝代替（拖出来根线，不喜欢）
+GPIO引脚
+3D打印外壳如果不想焊接你可以买Zero WH，引脚焊好的版本
+
+0x1 焊焊GPIO的时候可以先焊两边再焊中间，平衡之后焊起来会很方便
+微雪V3已经有GPIO焊好了，直接插上去就行，记得屏是覆盖住Zero的，不是呈Z状凸出的，插反了的话小心坏掉
+UPS-Lite是弹簧针脚，直接放上去按紧拧好螺丝和螺母就OK了"> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="pwnagotchi"/>
+  <meta property="og:site_name" content="容小狸的博客"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="容小狸的博客" type="application/atom+xml">
+  
+  
+    <link href="/fa fa-rss" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/prism.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">容小狸的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文档">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="全部分类">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="全部标签">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我？我有什么值得注意的？">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="其实我自己都不用RSS">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> pwnagotchi</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="Pwnagotchi"><a href="#Pwnagotchi" class="headerlink" title="Pwnagotchi"></a>Pwnagotchi</h1><p><a target="_blank" rel="noopener" href="https://pwnagotchi.ai/">官网</a><br>这个小东西可耗精力了，不知道为什么老是有问题，或许是我墨水屏买新了？以及进不去MANU mode，可能是驱动？<br>不知道，以后再说吧。</p>
+<hr>
+<h2 id="0x0-买"><a href="#0x0-买" class="headerlink" title="0x0 买"></a>0x0 买</h2><p>需要买的：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.raspberrypi.com/products/raspberry-pi-zero-w/">Raspberry Pi Zero W</a></li>
+<li>16GB <a target="_blank" rel="noopener" href="https://www.westerndigital.com/zh-cn/products/memory-cards/sandisk-extreme-uhs-i-microsd">MicroSD卡</a><br>还要用的：</li>
+<li>MicroSD读卡器</li>
+<li>数据线<br>锦上添花的：</li>
+<li>2.13inch墨水屏，我用了<a target="_blank" rel="noopener" href="https://www.waveshare.com/product/raspberry-pi/displays/e-paper/2.13inch-e-paper-hat.htm">微雪的V4</a>，不过底下那个镜像也支持？</li>
+<li><a target="_blank" rel="noopener" href="https://www.alibaba.com/product-detail/Ups-Lite-for-Raspberry-pi-Zero_62590553050.html">UPS-Lite 电池&#x2F;不间断电源</a>，这个可以用充电宝代替（拖出来根线，不喜欢）</li>
+<li>GPIO引脚</li>
+<li>3D打印外壳<br>如果不想焊接你可以买Zero WH，引脚焊好的版本</li>
+</ul>
+<h2 id="0x1-焊"><a href="#0x1-焊" class="headerlink" title="0x1 焊"></a>0x1 焊</h2><p>焊GPIO的时候可以先焊两边再焊中间，平衡之后焊起来会很方便</p>
+<p>微雪V3已经有GPIO焊好了，直接插上去就行，记得屏是覆盖住Zero的，不是呈Z状凸出的，插反了的话小心坏掉</p>
+<p>UPS-Lite是弹簧针脚，直接放上去按紧拧好螺丝和螺母就OK了</p>
+<h2 id="0x2-烧"><a href="#0x2-烧" class="headerlink" title="0x2 烧"></a>0x2 烧</h2><p>烧录的时候尝试了<a target="_blank" rel="noopener" href="https://github.com/evilsocket/pwnagotchi">原项目</a>的镜像，结果墨水屏没显示，所以总结是这样的：</p>
+<h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>用的<a target="_blank" rel="noopener" href="https://github.com/xMasterX/pwnagotchi/releases/tag/v1.5.6">这个镜像</a>（不然墨水屏显示不了，原镜像有一些奇奇怪怪的bug，但是用这个镜像的话MANU mode就用不了了，握手包需要读卡才能用）。</p>
+<h3 id="烧写"><a href="#烧写" class="headerlink" title="烧写"></a>烧写</h3><p>使用<a target="_blank" rel="noopener" href="https://www.raspberrypi.com/software/">树莓派烧写工具</a>或者按<a target="_blank" rel="noopener" href="https://pwnagotchi.ai/installation/#flashing-an-image">原项目</a>说的用<a target="_blank" rel="noopener" href="https://etcher.balena.io/#download-etcher">balenaEtcher</a>都一样，插上电脑就能写。Windows写完之后会弹出是否格式化，这时候忽略就行。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>参照这个，我们需要改一些东西：<br><code>config.toml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">main.name</span> <span class="string">=</span> <span class="string">&quot;pwnagotchi&quot;</span>             <span class="comment"># Your pwnagotchi&#x27;s name</span></span><br><span class="line"><span class="string">main.lang</span> <span class="string">=</span> <span class="string">&quot;en&quot;</span>                     <span class="comment"># Interface language, zh-Hans is not supported</span></span><br><span class="line"><span class="string">main.whitelist</span> <span class="string">=</span> [</span><br><span class="line">  <span class="string">&quot;EXAMPLE_NETWORK&quot;</span>,                 <span class="comment"># The network which pwnagotchi will not deauth, </span></span><br><span class="line">  <span class="string">&quot;ANOTHER_EXAMPLE_NETWORK&quot;</span>,         <span class="comment"># but pwnagotchi will still capture the handshake</span></span><br><span class="line">  <span class="string">&quot;fo:od:ba:be:fo:od&quot;</span>,               <span class="comment"># of every APs. </span></span><br><span class="line">  <span class="string">&quot;fo:od:ba&quot;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="string">main.plugins.grid.enabled</span> <span class="string">=</span> <span class="literal">true</span></span><br><span class="line"><span class="string">main.plugins.grid.report</span> <span class="string">=</span> <span class="literal">true</span></span><br><span class="line"><span class="string">main.plugins.grid.exclude</span> <span class="string">=</span> [</span><br><span class="line">  <span class="string">&quot;YourHomeNetworkHere&quot;</span>              <span class="comment"># The same config as main.whitelist is the </span></span><br><span class="line">]                                    <span class="comment"># simplest.</span></span><br><span class="line"></span><br><span class="line"><span class="string">ui.display.enabled</span> <span class="string">=</span> <span class="literal">true</span>            <span class="comment"># This is the e-Paper screen configuration. </span></span><br><span class="line"><span class="string">ui.display.type</span> <span class="string">=</span> <span class="string">&quot;waveshare_3&quot;</span>      <span class="comment"># Using WaveShare e-Paper V3 (actually V4). </span></span><br><span class="line"><span class="string">ui.display.color</span> <span class="string">=</span> <span class="string">&quot;black&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>写完之后要放在bootfs分区的根目录下。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>很简单，把烧好的Micro SD卡放进ZeroW中插电开机即可。</p>
+<h2 id="0x3-走"><a href="#0x3-走" class="headerlink" title="0x3 走"></a>0x3 走</h2><p>正如官网介绍的，</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://twitter.com/pwnagotchi">Pwnagotchi</a> is an <a target="_blank" rel="noopener" href="https://hackernoon.com/intuitive-rl-intro-to-advantage-actor-critic-a2c-4ff545978752">A2C</a>-based “AI” powered by <a target="_blank" rel="noopener" href="https://www.bettercap.org/">bettercap</a> and running on a <a target="_blank" rel="noopener" href="https://www.raspberrypi.org/products/raspberry-pi-zero-w/">Raspberry Pi Zero W</a> that learns from its surrounding WiFi environment in order to maximize the <a target="_blank" rel="noopener" href="https://pwnagotchi.ai/intro/#wifi-handshakes-101">crackable WPA key material it captures</a> (either through passive sniffing or by performing deauthentication and association attacks).</p>
+</blockquote>
+<p>这玩意儿是一个吃Wi-Fi握手包的电子宠物，如何拿到更多握手包？那自然是出去走走了。<br>公园里走走，街道旁走走，商场里走走，到处都是握手包，何必担心“饿着”它呢？</p>
+<h1 id="以及……"><a href="#以及……" class="headerlink" title="以及……"></a>以及……</h1><p>我们给这个小东西以“食物”，这个小东西给了我们出去多活动的机会，这对我们何尝不是一种额外的收获呢？</p>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2023/09/02/于Windows上部署ChatGLM2-6B 以及其WebUI/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+		<section id="comments" class="comments">
+			<style>
+			.comments{margin:30px;padding:10px;background:rgb(0, 0, 0)}
+			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
+			</style>
+			<div id="vcomment" class="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var valineConfig = {"enable":true,"appId":"AjgVa7glgk4i6IEbtfhvLoeS-gzGzoHsz","appKey":"dRTSo5QbogBgKa5MHpQf9JLZ","placeholder":"","visitor":true,"avatar":"monsterid","requiredFields":["nick","mail"],"pageView":false,"recordIP":true}
+valineConfig.el='#vcomment';
+new Valine(valineConfig);
+    // new Valine({
+    //     el: '#vcomment',
+    //     appId: "",
+    //     appKey: "",
+    //     placeholder: "",
+    //     avatar:"monsterid",
+    //     visitor: "true",
+    //     requiredFields: "nick,mail".split(','),
+    // });
+</script>
+
+		</section>
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-10-10 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Hacking/">Hacking<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/Hacking/">Hacking<span>1</span></a></li> <li><a href="/tags/Pwn/">Pwn<span>1</span></a></li> <li><a href="/tags/Pwnagotchi/">Pwnagotchi<span>1</span></a></li> <li><a href="/tags/人工智能/">人工智能<span>2</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2023 Rong Xiaoli's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

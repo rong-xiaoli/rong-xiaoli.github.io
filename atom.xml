@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>容小狸的博客</title>
+  
+  
+  <link href="http://blog.rongxiaoli.top/atom.xml" rel="self"/>
+  
+  <link href="http://blog.rongxiaoli.top/"/>
+  <updated>2023-10-17T08:15:48.972Z</updated>
+  <id>http://blog.rongxiaoli.top/</id>
+  
+  <author>
+    <name>Rong Xiaoli</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pwnagotchi</title>
+    <link href="http://blog.rongxiaoli.top/2023/10/10/pwnagotchi/"/>
+    <id>http://blog.rongxiaoli.top/2023/10/10/pwnagotchi/</id>
+    <published>2023-10-09T16:21:53.000Z</published>
+    <updated>2023-10-17T08:15:48.972Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Pwnagotchi&quot;&gt;&lt;a href=&quot;#Pwnagotchi&quot; class=&quot;headerlink&quot; title=&quot;Pwnagotchi&quot;&gt;&lt;/a&gt;Pwnagotchi&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://pwnagotchi.ai/&quot;&gt;官网&lt;/a&gt;&lt;br&gt;这个小东西可耗精力了，不知道为什么老是有问题，或许是我墨水屏买新了？以及进不去MANU mode，可能是驱动？&lt;br&gt;不知道，以后再说吧。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;0x0-买&quot;&gt;&lt;a href=&quot;#0x0-买&quot; class=&quot;headerlink&quot; title=&quot;0x0 买&quot;&gt;&lt;/a&gt;0x0 买&lt;/h2&gt;&lt;p&gt;需要买的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.com/products/raspberry-pi-zero-w/&quot;&gt;Raspberry Pi Zero W&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;16GB &lt;a href=&quot;https://www.westerndigital.com/zh-cn/products/memory-cards/sandisk-extreme-uhs-i-microsd&quot;&gt;MicroSD卡&lt;/a&gt;&lt;br&gt;还要用的：&lt;/li&gt;
+&lt;li&gt;MicroSD读卡器&lt;/li&gt;
+&lt;li&gt;数据线&lt;br&gt;锦上添花的：&lt;/li&gt;
+&lt;li&gt;2.13inch墨水屏，我用了&lt;a href=&quot;https://www.waveshare.com/product/raspberry-pi/displays/e-paper/2.13inch-e-paper-hat.htm&quot;&gt;微雪的V4&lt;/a&gt;，不过底下那个镜像也支持？&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.alibaba.com/product-detail/Ups-Lite-for-Raspberry-pi-Zero_62590553050.html&quot;&gt;UPS-Lite 电池&amp;#x2F;不间断电源&lt;/a&gt;，这个可以用充电宝代替（拖出来根线，不喜欢）&lt;/li&gt;
+&lt;li&gt;GPIO引脚&lt;/li&gt;
+&lt;li&gt;3D打印外壳&lt;br&gt;如果不想焊接你可以买Zero WH，引脚焊好的版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;0x1-焊&quot;&gt;&lt;a href=&quot;#0x1-焊&quot; class=&quot;headerlink&quot; title=&quot;0x1 焊&quot;&gt;&lt;/a&gt;0x1 焊&lt;/h2&gt;&lt;p&gt;焊GPIO的时候可以先焊两边再焊中间，平衡之后焊起来会很方便&lt;/p&gt;
+&lt;p&gt;微雪V3已经有GPIO焊好了，直接插上去就行，记得屏是覆盖住Zero的，不是呈Z状凸出的，插反了的话小心坏掉&lt;/p&gt;
+&lt;p&gt;UPS-Lite是弹簧针脚，直接放上去按紧拧好螺丝和螺母就OK了&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Hacking" scheme="http://blog.rongxiaoli.top/categories/Hacking/"/>
+    
+    
+    <category term="Hacking" scheme="http://blog.rongxiaoli.top/tags/Hacking/"/>
+    
+    <category term="Pwn" scheme="http://blog.rongxiaoli.top/tags/Pwn/"/>
+    
+    <category term="Pwnagotchi" scheme="http://blog.rongxiaoli.top/tags/Pwnagotchi/"/>
+    
+    <category term="人工智能" scheme="http://blog.rongxiaoli.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>于Windows上部署ChatGLM2-6B 以及其WebUI</title>
+    <link href="http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/"/>
+    <id>http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/</id>
+    <published>2023-09-02T06:06:13.000Z</published>
+    <updated>2023-10-17T08:16:04.287Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;寻思要给自己搞一个能上网的GLM2-6B，就在&lt;a href=&quot;https://chatglm.cn/blog&quot;&gt;GLM官网&lt;/a&gt;找有没有友链，正好找到了这么一条：&lt;a href=&quot;https://github.com/LemonQu-GIT/ChatGLM-6B-Engineering&quot;&gt;ChatGLM-6B-Engineering&lt;/a&gt;，于是就打算在本地部署一下（我是比较讨厌语言模型不在本地的那种）。坑有点多，于是用几乎是0基础的方式写了这么一篇教程。&lt;br&gt;本篇文章使用venv来创建虚拟环境，conda创建环境的可以找别人了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;0x0-拉代码&quot;&gt;&lt;a href=&quot;#0x0-拉代码&quot; class=&quot;headerlink&quot; title=&quot;0x0 拉代码&quot;&gt;&lt;/a&gt;0x0 拉代码&lt;/h2&gt;&lt;h2 id=&quot;到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。&quot;&gt;&lt;a href=&quot;#到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。&quot; class=&quot;headerlink&quot; title=&quot;到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。&quot;&gt;&lt;/a&gt;到这个工程的仓库拉下代码，解压到一个文件夹。&lt;br&gt;创建一个命令行窗口，然后cd到你的目录。&lt;br&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;rem Go to your working dir. &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; /D D:&#92;&lt;span class=&quot;built_in&quot;&gt;path&lt;/span&gt;&#92;to&#92;your&#92;workspace&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/h2&gt;&lt;h2 id=&quot;0x1-创建环境&quot;&gt;&lt;a href=&quot;#0x1-创建环境&quot; class=&quot;headerlink&quot; title=&quot;0x1 创建环境&quot;&gt;&lt;/a&gt;0x1 创建环境&lt;/h2&gt;&lt;h2 id=&quot;然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖：&quot;&gt;&lt;a href=&quot;#然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖：&quot; class=&quot;headerlink&quot; title=&quot;然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖：&quot;&gt;&lt;/a&gt;然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：&lt;br&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;rem Run python to create venv. &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;python -m venv .&#92;venv&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：&lt;br&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;rem Set the cache dir. &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; TMPDIR=D:&#92;your&#92;cache&#92;&lt;span class=&quot;built_in&quot;&gt;dir&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;然后再在同一窗口安装执行：&lt;br&gt;pip安装依赖：&lt;br&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install -r requirements.txt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/h2&gt;&lt;h2 id=&quot;0x2-使用模型搭建GLM层API&quot;&gt;&lt;a href=&quot;#0x2-使用模型搭建GLM层API&quot; class=&quot;headerlink&quot; title=&quot;0x2 使用模型搭建GLM层API&quot;&gt;&lt;/a&gt;0x2 使用模型搭建GLM层API&lt;/h2&gt;&lt;p&gt;接下来GLM模型就已经基本可以使用了。&lt;br&gt;ChatGLM有量化，可以在稍微性能不足一点的电脑上运行：&lt;br&gt;以下内容摘自&lt;a href=&quot;https://github.com/THUDM/ChatGLM-6B#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F&quot;&gt;ChatGLM-6B的README.md&lt;/a&gt;:&lt;/p&gt;
+&lt;h3 id=&quot;硬件需求&quot;&gt;&lt;a href=&quot;#硬件需求&quot; class=&quot;headerlink&quot; title=&quot;硬件需求&quot;&gt;&lt;/a&gt;硬件需求&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;量化等级&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;最低 GPU 显存&lt;/strong&gt;（推理）&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;最低 GPU 显存&lt;/strong&gt;（高效参数微调）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;FP16（无量化）&lt;/td&gt;
+&lt;td&gt;13 GB&lt;/td&gt;
+&lt;td&gt;14 GB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;INT8&lt;/td&gt;
+&lt;td&gt;8 GB&lt;/td&gt;
+&lt;td&gt;9 GB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;INT4&lt;/td&gt;
+&lt;td&gt;6 GB&lt;/td&gt;
+&lt;td&gt;7 GB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="人工智能" scheme="http://blog.rongxiaoli.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="人工智能" scheme="http://blog.rongxiaoli.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="LLM" scheme="http://blog.rongxiaoli.top/tags/LLM/"/>
+    
+    <category term="Python" scheme="http://blog.rongxiaoli.top/tags/Python/"/>
+    
+    <category term="ChatGLM2-6B" scheme="http://blog.rongxiaoli.top/tags/ChatGLM2-6B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电赛</title>
+    <link href="http://blog.rongxiaoli.top/2023/08/04/%E7%94%B5%E8%B5%9B/"/>
+    <id>http://blog.rongxiaoli.top/2023/08/04/%E7%94%B5%E8%B5%9B/</id>
+    <published>2023-08-03T16:11:22.000Z</published>
+    <updated>2023-09-05T08:02:32.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Day-1&quot;&gt;&lt;a href=&quot;#Day-1&quot; class=&quot;headerlink&quot; title=&quot;Day 1&quot;&gt;&lt;/a&gt;Day 1&lt;/h2&gt;&lt;p&gt;我们组选了个B题，同轴电缆长度与终端负载检测&lt;br&gt;上午还真没啥事，8点等题，上午买买器材，吃个午饭&lt;/p&gt;
+&lt;p&gt;同轴电缆长度测定原理：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;向同轴电缆发一道脉冲，由于一端开路，同轴电缆会反弹一道脉冲，这就意味着在同轴线一端测量波形，我们能得到两个波形：一个是发射波，一个是反弹波。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GitHub上捞了个&lt;a href=&quot;https://github.com/hugen79/NanoVNA-H&quot;&gt;代码&lt;/a&gt;，但是ChibiOS&amp;#x2F;os&amp;#x2F;hal&amp;#x2F;ports&amp;#x2F;STM32&amp;#x2F;STM32F0xx&amp;#x2F;hal_lld.c报错，换成&lt;a href=&quot;https://github.com/DiSlord/NanoVNA-D&quot;&gt;另一个&lt;/a&gt;就搞定了（第二个现在还在更新，而且两个差别其实不是特别大，我们就可以比较方便地套用了）&lt;/p&gt;
+&lt;p&gt;主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。&lt;br&gt;我们也是有能干起来的活的，比如测量的UI，不知道我能不能帮的上忙。（我C稀碎，而且python也是完全不会）&lt;/p&gt;
+&lt;p&gt;睡觉了，等第二天器材到了就开始忙了。&lt;/p&gt;
+&lt;h2 id=&quot;Day-2&quot;&gt;&lt;a href=&quot;#Day-2&quot; class=&quot;headerlink&quot; title=&quot;Day 2&quot;&gt;&lt;/a&gt;Day 2&lt;/h2&gt;&lt;p&gt;快递早上就到了，接下来就是用micropython对NanoVNA的操作了。&lt;/p&gt;
+&lt;p&gt;之前没搞过micropython，踩了一些坑，跟着&lt;a href=&quot;https://zhuanlan.zhihu.com/p/366411699&quot;&gt;这篇文章&lt;/a&gt;走了一遍，就能上了。&lt;br&gt;首先是环境，安装所需的requirements，然后看到有个模块叫machine&lt;br&gt;这个模块是micropython生成的，所以应该这么搞：&lt;br&gt;进入虚拟环境：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔和笔记" scheme="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Python" scheme="http://blog.rongxiaoli.top/tags/Python/"/>
+    
+    <category term="电赛" scheme="http://blog.rongxiaoli.top/tags/%E7%94%B5%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RongXiaoliBotv0.2.1</title>
+    <link href="http://blog.rongxiaoli.top/2023/03/21/RongXiaoliBotv0-2-1/"/>
+    <id>http://blog.rongxiaoli.top/2023/03/21/RongXiaoliBotv0-2-1/</id>
+    <published>2023-03-20T16:30:27.000Z</published>
+    <updated>2023-10-18T16:11:51.010Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;容小狸bot-v0-2-1更新日志&quot;&gt;&lt;a href=&quot;#容小狸bot-v0-2-1更新日志&quot; class=&quot;headerlink&quot; title=&quot;容小狸bot v0.2.1更新日志&quot;&gt;&lt;/a&gt;容小狸bot v0.2.1更新日志&lt;/h1&gt;&lt;hr&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="软件" scheme="http://blog.rongxiaoli.top/categories/%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+    <category term="RongXiaoliBot" scheme="http://blog.rongxiaoli.top/tags/RongXiaoliBot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇post</title>
+    <link href="http://blog.rongxiaoli.top/2023/03/01/FirstPost/"/>
+    <id>http://blog.rongxiaoli.top/2023/03/01/FirstPost/</id>
+    <published>2023-03-01T12:40:31.000Z</published>
+    <updated>2023-03-01T12:42:08.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第一篇博客&quot;&gt;&lt;a href=&quot;#第一篇博客&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

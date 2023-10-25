@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <!-- google analytics -->
+  <meta name="google-site-verification" content="DcvKYP3aUT2r5C_9liWXDU7Hfaj8-0llUB0-Wr0J9l8" />
+  <!-- google analytics end -->
+  <!-- baidu analytics -->
+  <meta name="baidu-site-verification" content="codeva-EnHVSvuTxv" />
+  <!-- baidu analytics end -->
+  <!-- bing analytics -->
+  <meta name="msvalidate.01" content="59B362C3958F9B77C547452838F82199" />
+  <!-- bing analytics end -->
+  
+  <title>电赛 | 容小狸的博客</title>
+  <meta name="author" content="Rong Xiaoli">
+  
+  <meta name="description" content="Day 1我们组选了个B题，同轴电缆长度与终端负载检测上午还真没啥事，8点等题，上午买买器材，吃个午饭
+同轴电缆长度测定原理：
+
+向同轴电缆发一道脉冲，由于一端开路，同轴电缆会反弹一道脉冲，这就意味着在同轴线一端测量波形，我们能得到两个波形：一个是发射波，一个是反弹波。
+
+GitHub上捞了个代码，但是ChibiOS&amp;#x2F;os&amp;#x2F;hal&amp;#x2F;ports&amp;#x2F;STM32&amp;#x2F;STM32F0xx&amp;#x2F;hal_lld.c报错，换成另一个就搞定了（第二个现在还在更新，而且两个差别其实不是特别大，我们就可以比较方便地套用了）
+主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。我们也是有能干起来的活的，比如测量的UI，不知道我能不能帮的上忙。（我C稀碎，而且python也是完全不会）
+睡觉了，等第二天器材到了就开始忙了。
+Day 2快递早上就到了，接下来就是用micropython对NanoVNA的操作了。
+之前没搞过micropython，踩了一些坑，跟着这篇文章走了一遍，就能上了。首先是环境，安装所需的requirements，然后看到有个模块叫machine这个模块是micropython生成的，所以应该这么搞：进入虚拟环境："> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="电赛"/>
+  <meta property="og:site_name" content="容小狸的博客"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="容小狸的博客" type="application/atom+xml">
+  
+  
+    <link href="/fa fa-rss" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/prism.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">容小狸的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="全部文档">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="全部分类">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="全部标签">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="我？我有什么值得注意的？">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="其实我自己都不用RSS">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 电赛</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h2><p>我们组选了个B题，同轴电缆长度与终端负载检测<br>上午还真没啥事，8点等题，上午买买器材，吃个午饭</p>
+<p>同轴电缆长度测定原理：</p>
+<blockquote>
+<p>向同轴电缆发一道脉冲，由于一端开路，同轴电缆会反弹一道脉冲，这就意味着在同轴线一端测量波形，我们能得到两个波形：一个是发射波，一个是反弹波。</p>
+</blockquote>
+<p>GitHub上捞了个<a target="_blank" rel="noopener" href="https://github.com/hugen79/NanoVNA-H">代码</a>，但是ChibiOS&#x2F;os&#x2F;hal&#x2F;ports&#x2F;STM32&#x2F;STM32F0xx&#x2F;hal_lld.c报错，换成<a target="_blank" rel="noopener" href="https://github.com/DiSlord/NanoVNA-D">另一个</a>就搞定了（第二个现在还在更新，而且两个差别其实不是特别大，我们就可以比较方便地套用了）</p>
+<p>主要是仪器还没到，不能刷固件确认。其实只要固件有了，基本都没什么太大问题，然后就是写论文了。<br>我们也是有能干起来的活的，比如测量的UI，不知道我能不能帮的上忙。（我C稀碎，而且python也是完全不会）</p>
+<p>睡觉了，等第二天器材到了就开始忙了。</p>
+<h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><p>快递早上就到了，接下来就是用micropython对NanoVNA的操作了。</p>
+<p>之前没搞过micropython，踩了一些坑，跟着<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/366411699">这篇文章</a>走了一遍，就能上了。<br>首先是环境，安装所需的requirements，然后看到有个模块叫machine<br>这个模块是micropython生成的，所以应该这么搞：<br>进入虚拟环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ./venv/bin/activate</span><br></pre></td></tr></table></figure>
+<p>Windows：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./venv/scripts/activate.bat</span><br></pre></td></tr></table></figure>
+<p>之后（使用阿里云的镜像加速）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install micropy-cli esptool -i https://mirrors.aliyun.com/pypi/simple</span><br></pre></td></tr></table></figure>
+
+<p>擦除ESP32S3的固件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">esptool.py --chip esp32s3 --port /dev/yourDevice erase_flash</span><br></pre></td></tr></table></figure>
+<p>将micropython的固件刷上ESP32：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">esptool.py --chip esp32s3 --port /dev/youtDevice write_flash -z 0 /path/to/BIN_FILE.bin</span><br></pre></td></tr></table></figure>
+<p>串口连接ESP32S3，波特率115200，就可以了。</p>
+<p>第一天的时候其实是这样的：打算使用官方的开源代码进行逆向，获取数据。今天找到了这个：<br>有这个软件：<a target="_blank" rel="noopener" href="https://github.com/NanoVNA-Saver/nanovna-saver">NanoVNA-Saver</a>，是在Windows、Linux和MacOS上用于提取NanoVNA的数据的，也就是说NanoVNA-H使用串口进行调试，那么就可以通过串口指令提取数据：</p>
+<blockquote>
+<p>A multiplatform tool to save Touchstone files from the NanoVNA, sweep frequency spans in segments to gain more than 101 data points, and generally display and analyze the resulting data.</p>
+</blockquote>
+<blockquote>
+<p>This software connects to a NanoVNA and extracts the data for display on a computer and allows saving the sweep data to Touchstone files.</p>
+</blockquote>
+<p>接下来就是串口截取数据了。Windows下可以使用<a target="_blank" rel="noopener" href="http://www.ceiwei.com/mt/">CommMonitor</a>进行监视，Linux一开始用的是这个<a target="_blank" rel="noopener" href="https://github.com/chipkin/Linux-HighSpeedSerialMonitor/">“HighSpeedSerialMonitor”</a>，但是用这个的话会报错闪退，ERROR - too many retries。我猜估计是占用问题，Windows下那个CommMonitor就没有问题。<br>搜到stackexchange.com貌似有个<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/12359/how-can-i-monitor-serial-port-traffic">类似问题的帖子</a>，提到：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.google.com/search?q=socat+serial+port+pty+tee+debug">Googling</a> “socat serial port pty tee debug” will point you to several “standard procedure” examples, one being:</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">socat  /dev/ttyS0,raw,<span class="built_in">echo</span>=0  \</span><br><span class="line">	SYSTEM:<span class="string">&#x27;tee in.txt | socat - &quot;PTY,link=/tmp/ttyV0,raw,echo=0,waitslave&quot; | tee out.txt&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>貌似没问题，时间来不及了，没时间验证，明天再说。<br>明天要验证socat端口转发，两个佬晚上通宵搞定软件和硬件，明天写完论文就搞定了。</p>
+<h2 id="Day-3"><a href="#Day-3" class="headerlink" title="Day 3"></a>Day 3</h2><blockquote>
+<p>nanovna.py line 260 to line 270: </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">tdr</span>(<span class="params">self, x</span>):</span><br><span class="line">	pl.grid(<span class="literal">True</span>)</span><br><span class="line">	window = np.blackman(<span class="built_in">len</span>(x))</span><br><span class="line">	NFFT = <span class="number">256</span></span><br><span class="line">	td = np.<span class="built_in">abs</span>(np.fft.ifft(window * x, NFFT))</span><br><span class="line">	time = <span class="number">1</span> / (self.frequencies[<span class="number">1</span>] - self.frequencies[<span class="number">0</span>])</span><br><span class="line">	t_axis = np.linspace(<span class="number">0</span>, time, NFFT)</span><br><span class="line">	pl.plot(t_axis, td)</span><br><span class="line">	pl.xlim(<span class="number">0</span>, time)</span><br><span class="line">	pl.xlabel(<span class="string">&quot;time (s)&quot;</span>)</span><br><span class="line">	pl.ylabel(<span class="string">&quot;magnitude&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>问题是Micropython没有numpy，还有一个方案是捞个树莓派用，但是我觉得很臃肿，试着手搓一下Blackman，ittf和linspace，剩下的方案执行交给佬们。<br>linespace: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">linspace</span>(<span class="params">start, stop, num=<span class="number">50</span>, endpoint=<span class="literal">True</span>, retstep=<span class="literal">False</span>, dtype=<span class="literal">None</span>, axis=<span class="number">0</span></span>):</span><br><span class="line">	out = [ <span class="built_in">float</span>(start) ] <span class="comment">#try to init output.</span></span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">not</span> endpoint:</span><br><span class="line">		delta = <span class="built_in">float</span>((stop - start) / (num))</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		delta = <span class="built_in">float</span>((stop - start) / (num - <span class="number">1</span>))</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,num - <span class="number">1</span>):</span><br><span class="line">		out.append(<span class="built_in">float</span>(out[i] + delta)) <span class="comment"># For each step, add the delta.</span></span><br><span class="line"><span class="keyword">return</span> out</span><br></pre></td></tr></table></figure>
+<p>验证：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">linspaceTest</span>():</span><br><span class="line"><span class="comment"># Test 1:</span></span><br><span class="line">	result = libNumpy.linspace(<span class="number">2.0</span>, <span class="number">3.0</span>, num=<span class="number">5</span>)</span><br><span class="line">	<span class="built_in">print</span>(result)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Should be: [2. , 2.25, 2.5 , 2.75, 3. ]&quot;</span>)</span><br><span class="line"><span class="comment"># Test 2:</span></span><br><span class="line">	result = libNumpy.linspace(<span class="number">2.0</span>, <span class="number">3.0</span>, num=<span class="number">5</span>, endpoint=<span class="literal">False</span>)</span><br><span class="line">	<span class="built_in">print</span>(result)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Should be: [2. , 2.2, 2.4, 2.6, 2.8]&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>强制转换的时候精度丢了，要改。</p>
+<p>佬们做完树莓派的硬件适配了，可以不用管了，等会儿直接上树莓派就行了。</p>
+<p>摸了一下午鱼，佬们把python写完了，捞了份源码下来。</p>
+<blockquote>
+<p>CR.py<br>main.py<br>nanovna.py<br>TDR.py<br>utils (dir)<br>├── Formatting.py<br>├── RFTools.py<br>└── SITools.py</p>
+</blockquote>
+<p>依赖安装貌似还是有点问题，总之先这么装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install luma</span><br><span class="line">pip install luma.core</span><br><span class="line">pip install luma.oled</span><br></pre></td></tr></table></figure>
+
+<p>main.py为入口：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">	GPIO_init() <span class="comment"># init GPIO on rasp</span></span><br><span class="line">	_cr() <span class="comment"># draw screen</span></span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> GPIO.<span class="built_in">input</span>(<span class="number">4</span>):</span><br><span class="line">			_cr() <span class="comment"># almost the same as _tdr()</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> GPIO.<span class="built_in">input</span>(<span class="number">17</span>):</span><br><span class="line">			_tdr()</span><br></pre></td></tr></table></figure>
+<p>首先初始化GPIO：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">GPIO_init</span>():</span><br><span class="line">	GPIO.setmode(GPIO.BCM)</span><br><span class="line">	GPIO.setup(<span class="number">4</span>, GPIO.IN, pull_up_down=GPIO.PUD_UP)</span><br><span class="line">	GPIO.setup(<span class="number">17</span>, GPIO.IN, pull_up_down=GPIO.PUD_UP)</span><br></pre></td></tr></table></figure>
+<p>第4，17针脚用于接出两个按钮，所以是<code>GPIO.IN</code>，具体定义见GPIO。</p>
+<p>接下来准备屏幕：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_cr</span>():</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;CR&quot;</span>)</span><br><span class="line">	stats(oled, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&quot;Unknown&quot;</span>)</span><br><span class="line">	length, terminal_category, terminal_parameter = cr(nv, <span class="number">97e-12</span>) <span class="comment"># read from vna</span></span><br><span class="line">	<span class="comment">#stats(oled, 1, length, terminal_category, terminal_parameter)</span></span><br><span class="line">	stats(oled, <span class="number">0</span>, length, terminal_category, terminal_parameter) <span class="comment"># render</span></span><br><span class="line">	<span class="comment"># cr(nv, 97e-12)</span></span><br></pre></td></tr></table></figure>
+
+<p><code>stats()</code>用于更新屏幕，画出屏幕上的东西，比如各种参数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">stats</span>(<span class="params">oled, Condition, length, terminal_category, terminal_parameter</span>): <span class="comment">#render func</span></span><br><span class="line">	oled.clear() <span class="comment">#clear the screen</span></span><br><span class="line">	<span class="keyword">with</span> canvas(oled) <span class="keyword">as</span> draw:</span><br><span class="line">	draw.text((<span class="number">1</span>,<span class="number">10</span>), <span class="string">&quot;condition&quot;</span>, fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line">	draw.text((<span class="number">1</span>,<span class="number">20</span>), <span class="string">&quot;length&quot;</span>, fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line">	draw.text((<span class="number">1</span>,<span class="number">30</span>), <span class="string">&quot;Load_Type&quot;</span>, fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line">	draw.text((<span class="number">1</span>,<span class="number">40</span>), <span class="string">&quot;Load_Para&quot;</span>, fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line">	draw.text((<span class="number">80</span>,<span class="number">10</span>), <span class="built_in">str</span>(Piget_condition(Condition)), fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line">	draw.text((<span class="number">50</span>,<span class="number">20</span>), <span class="string">f&quot;<span class="subst">&#123;(length*<span class="number">100</span>):<span class="number">.2</span>f&#125;</span> cm&quot;</span>, fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line">	draw.text((<span class="number">60</span>,<span class="number">30</span>), <span class="built_in">str</span>(Piget_terminal_category(terminal_category)[<span class="number">0</span>]), fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line">	draw.text((<span class="number">60</span>,<span class="number">40</span>), <span class="built_in">str</span>(terminal_parameter), fill=<span class="string">&quot;white&quot;</span>)</span><br><span class="line">	draw.text((<span class="number">80</span>,<span class="number">40</span>), <span class="built_in">str</span>(Piget_terminal_category(terminal_category)[<span class="number">1</span>]), fill=<span class="string">&quot;white&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>还挺显而易见的。</p>
+<p><code>Piget_terminal_category()</code>用于返回获取终端负载的类型的状态和单位，有开路，容性负载，和电阻：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">Piget_terminal_category</span>(<span class="params">terminal_category</span>): <span class="comment"># terminal type</span></span><br><span class="line">    <span class="keyword">if</span> terminal_category ==<span class="number">0</span> :</span><br><span class="line">        Show_terminal_category = [<span class="string">&quot;open&quot;</span>,<span class="string">&quot;&quot;</span>]</span><br><span class="line">    <span class="keyword">elif</span> terminal_category ==<span class="number">1</span>:</span><br><span class="line">        Show_terminal_category = [<span class="string">&quot;C&quot;</span>,<span class="string">&quot;pF&quot;</span>]</span><br><span class="line">    <span class="keyword">elif</span> terminal_category ==<span class="number">2</span>:</span><br><span class="line">        Show_terminal_category = [<span class="string">&quot;R&quot;</span>,<span class="string">&quot;Ohm&quot;</span>]</span><br><span class="line">    <span class="keyword">return</span> Show_terminal_category</span><br></pre></td></tr></table></figure>
+
+<p><code>Piget_condition()</code>用来获取树莓派的状态的文本，0是正在等待，1是正在测量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">Piget_condition</span>(<span class="params">Condition</span>): <span class="comment"># current pi condition</span></span><br><span class="line">    <span class="keyword">if</span> Condition == <span class="number">1</span>:</span><br><span class="line">        Show_Condition = <span class="string">&quot;TESTING&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> Condition ==<span class="number">0</span>:</span><br><span class="line">        Show_Condition = <span class="string">&quot;HOLD&quot;</span></span><br><span class="line">    <span class="keyword">return</span> Show_Condition</span><br></pre></td></tr></table></figure>
+
+<p><code>_cr()</code>是用来提取从vna获取的数据的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_cr</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;CR&quot;</span>)</span><br><span class="line">    stats(oled, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&quot;Unknown&quot;</span>)</span><br><span class="line">    length, terminal_category, terminal_parameter = cr(nv, <span class="number">97e-12</span>) <span class="comment"># read from vna</span></span><br><span class="line">    <span class="comment">#stats(oled, 1, length, terminal_category, terminal_parameter)</span></span><br><span class="line">    stats(oled, <span class="number">0</span>, length, terminal_category, terminal_parameter) <span class="comment"># render</span></span><br><span class="line">    <span class="comment"># cr(nv, 97e-12)</span></span><br></pre></td></tr></table></figure>
+
+<p><code>_tdr()</code>也差不多：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">_tdr</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;TDR&quot;</span>)</span><br><span class="line">    stats(oled, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">&quot;Unknown&quot;</span>)</span><br><span class="line">    length, terminal_category, terminal_parameter = cr(nv, <span class="number">97e-12</span>) <span class="comment">#read from vna</span></span><br><span class="line">    <span class="comment">#stats(oled, 1, length, terminal_category, terminal_parameter)</span></span><br><span class="line">    stats(oled, <span class="number">0</span>, length, terminal_category, terminal_parameter) <span class="comment"># render</span></span><br></pre></td></tr></table></figure>
+<p><code>cr()</code>用于从vna生数据做转换：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cr</span>(<span class="params">nv, offset</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    nv: NanoVNA对象；</span></span><br><span class="line"><span class="string">    offset： 每米线电容大小（单位：F)， 1F = 1e12pF</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Return</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    cable_len, s11 = tdr(nv, <span class="number">50000</span>, <span class="number">200000000</span>) <span class="comment"># 200 MHz     ：线材够长</span></span><br><span class="line">    cable_len, s11 = tdr(nv, <span class="number">50000</span>, <span class="number">200000000</span>)</span><br><span class="line">    <span class="built_in">print</span>(cable_len)</span><br><span class="line">    <span class="keyword">if</span> cable_len &lt;= <span class="number">2.5</span>:</span><br><span class="line">        cable_len, s11 = tdr(nv, <span class="number">50000</span>, <span class="number">1500000000</span>) <span class="comment"># 1.5 GHz：线材小于2.5米</span></span><br><span class="line">        cable_len, s11 = tdr(nv, <span class="number">50000</span>, <span class="number">1500000000</span>)</span><br><span class="line">        <span class="built_in">print</span>(cable_len)</span><br><span class="line">    <span class="keyword">elif</span> cable_len &lt;= <span class="number">5</span>:</span><br><span class="line">        cable_len, s11 = tdr(nv, <span class="number">50000</span>, <span class="number">750000000</span>) <span class="comment"># 750 MHz ：线材小于5米</span></span><br><span class="line">        cable_len, s11 = tdr(nv, <span class="number">50000</span>, <span class="number">750000000</span>)</span><br><span class="line">        <span class="built_in">print</span>(cable_len)</span><br><span class="line">    imp = RFTools.gamma_to_impedance(<span class="built_in">complex</span>(s11[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>], s11[<span class="number">1</span>][<span class="number">0</span>][<span class="number">1</span>])) <span class="comment"># 这是阻抗</span></span><br><span class="line">    imp_p = RFTools.serial_to_parallel(imp)</span><br><span class="line">    capacitance = RFTools.impedance_to_capacitance(imp, <span class="number">500000</span>)</span><br><span class="line">    resistance = imp_p.real <span class="comment"># 获取电阻</span></span><br><span class="line">    <span class="keyword">if</span> capacitance - (offset * cable_len) &gt;= <span class="number">90e-12</span>:</span><br><span class="line">        cap_str = format_capacitance(</span><br><span class="line">            <span class="comment"># 500000表示500kHz</span></span><br><span class="line">            RFTools.impedance_to_capacitance(imp, <span class="number">500000</span>)</span><br><span class="line">        )</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;类型：电容  电容值：<span class="subst">&#123;cap_str&#125;</span> 线长：<span class="subst">&#123;cable_len&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> cable_len, <span class="number">1</span>, cap_str</span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span> &lt; resistance &lt;= <span class="number">60</span>:</span><br><span class="line">        resistance_str = format_resistance(imp_p.real)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;类型：电阻 电阻值：<span class="subst">&#123;resistance_str&#125;</span> 线长：<span class="subst">&#123;cable_len&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> cable_len, <span class="number">2</span>, resistance_str</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ((capacitance - (offset * cable_len) &gt;= <span class="number">90e-12</span>) <span class="keyword">or</span> (<span class="number">0</span> &lt; resistance &lt;= <span class="number">60</span>)):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;开路 线长：<span class="subst">&#123;cable_len&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> cable_len, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="built_in">print</span>(capacitance)</span><br><span class="line">    <span class="built_in">print</span>(resistance)</span><br><span class="line">    cap_str = format_capacitance(</span><br><span class="line">        <span class="comment"># 500000表示500kHz</span></span><br><span class="line">        RFTools.impedance_to_capacitance(imp, <span class="number">500000</span>)</span><br><span class="line">    )</span><br><span class="line">    resistance_str = format_resistance(imp_p.real)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;电容值为：<span class="subst">&#123;cap_str&#125;</span> 电阻值为：<span class="subst">&#123;resistance_str&#125;</span> 电缆长度为：<span class="subst">&#123;cable_len&#125;</span> m&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>tdr()</code>用于获取vna生数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">tdr</span>(<span class="params">nv, start, end</span>):</span><br><span class="line">    nv.fetch_frequencies()</span><br><span class="line">    nv.fetch_frequencies()</span><br><span class="line">    s11 = nv.new_scan(start, end)</span><br><span class="line">    <span class="comment"># print(s11[1][0])</span></span><br><span class="line">    t_axies = nv.tdr(s11[<span class="number">0</span>])</span><br><span class="line">    d_axies = t_axies[<span class="number">0</span>] * <span class="number">0.71</span> * speed_of_light</span><br><span class="line">    index_peak = np.argmax(t_axies[<span class="number">1</span>])</span><br><span class="line">    cable_len = d_axies[index_peak] / <span class="number">2</span></span><br><span class="line">    <span class="comment"># print(f&#x27;Cable length: &#123;cable_len&#125; m&#x27;)</span></span><br><span class="line">    <span class="keyword">return</span> cable_len, s11</span><br></pre></td></tr></table></figure>
+
+<p><code>RFTools.py</code>是用来计算的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">gamma_to_impedance</span>(<span class="params">gamma: <span class="built_in">complex</span>, ref_impedance: <span class="built_in">float</span> = <span class="number">50</span></span>) -&gt; <span class="built_in">complex</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate impedance from gamma&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> ((-gamma - <span class="number">1</span>) / (gamma - <span class="number">1</span>)) * ref_impedance</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        <span class="keyword">return</span> math.inf</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">impedance_to_capacitance</span>(<span class="params">z: <span class="built_in">complex</span>, freq: <span class="built_in">float</span></span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate capacitive equivalent for reactance&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> freq == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> -math.inf</span><br><span class="line">    <span class="keyword">return</span> math.inf <span class="keyword">if</span> z.imag == <span class="number">0</span> <span class="keyword">else</span> -(<span class="number">1</span> / (freq * <span class="number">2</span> * math.pi * z.imag))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">impedance_to_inductance</span>(<span class="params">z: <span class="built_in">complex</span>, freq: <span class="built_in">float</span></span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate inductive equivalent for reactance&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> freq == <span class="number">0</span> <span class="keyword">else</span> z.imag * <span class="number">1</span> / (freq * <span class="number">2</span> * math.pi)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">serial_to_parallel</span>(<span class="params">z: <span class="built_in">complex</span></span>) -&gt; <span class="built_in">complex</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Convert serial impedance to parallel impedance equivalent&quot;&quot;&quot;</span></span><br><span class="line">    z_sq_sum = z.real**<span class="number">2</span> + z.imag**<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> z.real == <span class="number">0</span> <span class="keyword">and</span> z.imag == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">complex</span>(math.inf, math.inf)</span><br><span class="line">    <span class="keyword">if</span> z.imag == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">complex</span>(z_sq_sum / z.real, math.copysign(math.inf, z_sq_sum))</span><br><span class="line">    <span class="keyword">if</span> z.real == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">complex</span>(math.copysign(math.inf, z_sq_sum), z_sq_sum / z.imag)</span><br><span class="line">	    returnrs <span class="built_in">complex</span>(z_sq_sum / z.real, z_sq_sum / z.imag)</span><br></pre></td></tr></table></figure>
+<p><code>SITools.py</code>是用来写科学计数法的。</p>
+<h2 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h2><p>上面这个代码分析算是半梦半醒之间写出来的，弄完已经第二天早上6点了。<br>睡到中午12点，佬们开始重构代码了，要我读一遍写个框图。</p>
+<pre class="mermaid">graph TD
+GlobalCapacitance(线路阻抗)
+InitBox(初始化) --> OLEDRefresh(屏幕刷新)
+OLEDRefresh --> Length[测量线长] --> MesureLength[扫频并获取频点数据<br/>Gamma转负阻抗<br/><br/>串联阻抗转并联阻抗<br/>阻抗转容性负载] --> |存储| GlobalCapacitance(线路阻抗) --> OLEDRefresh1
+GlobalCapacitance1(线路阻抗) --> CalculateLoad
+OLEDRefresh --> Load[测量负载] --> MesureLoad[扫频并获取频点数据<br/>Gamma转负阻抗<br/>串联阻抗转并联阻抗<br/>阻抗转容性负载] --> CalculateLoad[计算负载] --> OLEDRefresh1(屏幕刷新)</pre>
+
+<p>搞定，装箱，明天回家。</p>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2023/09/02/于Windows上部署ChatGLM2-6B 以及其WebUI/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2023/03/21/RongXiaoliBotv0-2-1/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+		<section id="comments" class="comments">
+			<style>
+			.comments{margin:30px;padding:10px;background:rgb(0, 0, 0)}
+			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
+			</style>
+			<div id="vcomment" class="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var valineConfig = {"enable":true,"appId":"AjgVa7glgk4i6IEbtfhvLoeS-gzGzoHsz","appKey":"dRTSo5QbogBgKa5MHpQf9JLZ","placeholder":"","visitor":true,"avatar":"monsterid","requiredFields":["nick","mail"],"pageView":false,"recordIP":true}
+valineConfig.el='#vcomment';
+new Valine(valineConfig);
+    // new Valine({
+    //     el: '#vcomment',
+    //     appId: "",
+    //     appKey: "",
+    //     placeholder: "",
+    //     avatar:"monsterid",
+    //     visitor: "true",
+    //     requiredFields: "nick,mail".split(','),
+    // });
+</script>
+
+		</section>
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-08-04 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/随笔和笔记/">随笔和笔记<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/Python/">Python<span>2</span></a></li> <li><a href="/tags/电赛/">电赛<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2023 Rong Xiaoli's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
