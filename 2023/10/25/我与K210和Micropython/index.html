@@ -15,19 +15,20 @@
   <meta name="msvalidate.01" content="59B362C3958F9B77C547452838F82199" />
   <!-- bing analytics end -->
   
-  <title>RongXiaoliBotv0.2.1 | 容小狸的博客</title>
+  <title>我与K210和Micropython | 容小狸的博客</title>
   <meta name="author" content="Rong Xiaoli">
   
-  <meta name="description" content="容小狸bot v0.2.1更新日志
-工程中
- 梗图生成器（得先找到API）
- osu!bot(插件名称OsuBot)
- backend&amp;#x2F;Network&amp;#x2F;HttpGet 和 backend&amp;#x2F;Network&amp;#x2F;HttpsGet 添加headers支持">
+  <meta name="description" content="大创要搞CV，我就试着搞点东西出来。本篇重点是怎么刷入Micropython系统，默认已经有一块板子了（Maix Nano）
+
+开发环境准备驱动这里，Windows要装，Linux按理来说可以自带（只要不是什么arch之类极简系统）
+固件这里下载刷写工具，这里下载固件。这里讲了固件版本命名方式。
+Windows下刷写工具貌似必须以管理员权限运行，不然会刷写错误提示Permission denied
+串口连接工具他推荐了这些："> 
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="RongXiaoliBotv0.2.1"/>
+  <meta property="og:title" content="我与K210和Micropython"/>
   <meta property="og:site_name" content="容小狸的博客"/>
 
   
@@ -127,7 +128,7 @@
 
 	
 		<div class="page-header">
-			<h1> RongXiaoliBotv0.2.1</h1>
+			<h1> 我与K210和Micropython</h1>
 		</div>
 	
 
@@ -147,15 +148,23 @@
                 
     <div id="toc">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%B9%E5%B0%8F%E7%8B%B8bot-v0-2-1%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="toc-text">容小狸bot v0.2.1更新日志</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B%E4%B8%AD"><span class="toc-text">工程中</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-text">开发环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8"><span class="toc-text">驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6"><span class="toc-text">固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7"><span class="toc-text">串口连接工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE"><span class="toc-text">IDE</span></a></li></ol></li></ol>
     </div>
 
-	  <h1 id="容小狸bot-v0-2-1更新日志"><a href="#容小狸bot-v0-2-1更新日志" class="headerlink" title="容小狸bot v0.2.1更新日志"></a>容小狸bot v0.2.1更新日志</h1><hr>
-<h2 id="工程中"><a href="#工程中" class="headerlink" title="工程中"></a>工程中</h2><ul>
-<li><input disabled="" type="checkbox"> 梗图生成器（得先找到API）</li>
-<li><input disabled="" type="checkbox"> osu!bot(插件名称OsuBot)</li>
-<li><input disabled="" type="checkbox"> backend&#x2F;Network&#x2F;HttpGet 和 backend&#x2F;Network&#x2F;HttpsGet 添加headers支持</li>
+	  <p>大创要搞CV，我就试着搞点东西出来。<br>本篇重点是怎么刷入Micropython系统，默认已经有一块板子了（Maix Nano）</p>
+<hr>
+<h1 id="开发环境准备"><a href="#开发环境准备" class="headerlink" title="开发环境准备"></a>开发环境准备</h1><h2 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h2><p><a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/tools/driver">这里</a>，Windows要装，Linux按理来说可以自带（只要不是什么arch之类极简系统）</p>
+<h2 id="固件"><a href="#固件" class="headerlink" title="固件"></a>固件</h2><p><a target="_blank" rel="noopener" href="https://github.com/sipeed/kflash_gui/releases">这里</a>下载刷写工具，<a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/release/master">这里</a>下载固件。<br><a target="_blank" rel="noopener" href="https://wiki.sipeed.com/soft/maixpy/zh/get_started/upgrade_maixpy_firmware.html#%E5%9B%BA%E4%BB%B6%E5%91%BD%E5%90%8D%E8%AF%B4%E6%98%8E">这里</a>讲了固件版本命名方式。</p>
+<p>Windows下刷写工具<em>貌似必须以管理员权限运行</em>，不然会刷写错误提示Permission denied</p>
+<h2 id="串口连接工具"><a href="#串口连接工具" class="headerlink" title="串口连接工具"></a>串口连接工具</h2><p>他推荐了这些：</p>
+<ul>
+<li>Mobaxterm </li>
+<li>mpfshell-lite</li>
+<li>xshell</li>
+<li>以及他自己的IDE</li>
 </ul>
+<p>但是呢，<img src="/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/PuTTY.png" alt="PuTTY大爹"><br>PuTTY也能用<br><img src="/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/PuTTYConnect.jpg" alt="嗯，你滴PuTTY"><br>后来想了想还是用他自己的IDE吧，功能集成还不错</p>
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p><a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/ide">这儿</a>下载，找一下最新版就行。</p>
 
 	  <div class="article-footer-copyright">
 
@@ -173,13 +182,12 @@
 
     
     
-    <a href="/2023/08/04/电赛/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2023/03/01/FirstPost/" type="button" class="btn btn-default ">Next<i
+    <a href="/2023/10/10/pwnagotchi/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -238,23 +246,12 @@ new Valine(valineConfig);
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2023-03-21 
+	2023-10-25 
 	</div>
 	
 
 	<!-- categories -->
     
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/软件/">软件<span>1</span></a></li>
-  </li>
-
-    </ul>
-	</div>
-	
 
 	<!-- tags -->
 	
@@ -262,7 +259,7 @@ new Valine(valineConfig);
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/RongXiaoliBot/">RongXiaoliBot<span>1</span></a></li>
+  <li><a href="/tags/Python/">Python<span>3</span></a></li> <li><a href="/tags/AI/">AI<span>2</span></a></li>
     </ul>
 	</div>
 		

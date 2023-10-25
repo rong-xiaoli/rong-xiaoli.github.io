@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>我与K210和Micropython</title>
+      <link href="/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/"/>
+      <url>/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/</url>
+      
+        <content type="html"><![CDATA[<p>大创要搞CV，我就试着搞点东西出来。<br>本篇重点是怎么刷入Micropython系统，默认已经有一块板子了（Maix Nano）</p><hr><h1 id="开发环境准备"><a href="#开发环境准备" class="headerlink" title="开发环境准备"></a>开发环境准备</h1><h2 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h2><p><a href="https://dl.sipeed.com/shareURL/MAIX/tools/driver">这里</a>，Windows要装，Linux按理来说可以自带（只要不是什么arch之类极简系统）</p><h2 id="固件"><a href="#固件" class="headerlink" title="固件"></a>固件</h2><p><a href="https://github.com/sipeed/kflash_gui/releases">这里</a>下载刷写工具，<a href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/release/master">这里</a>下载固件。<br><a href="https://wiki.sipeed.com/soft/maixpy/zh/get_started/upgrade_maixpy_firmware.html#%E5%9B%BA%E4%BB%B6%E5%91%BD%E5%90%8D%E8%AF%B4%E6%98%8E">这里</a>讲了固件版本命名方式。</p><p>Windows下刷写工具<em>貌似必须以管理员权限运行</em>，不然会刷写错误提示Permission denied</p><h2 id="串口连接工具"><a href="#串口连接工具" class="headerlink" title="串口连接工具"></a>串口连接工具</h2><p>他推荐了这些：</p><ul><li>Mobaxterm </li><li>mpfshell-lite</li><li>xshell</li><li>以及他自己的IDE</li></ul><p>但是呢，<img src="/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/PuTTY.png" alt="PuTTY大爹"><br>PuTTY也能用<br><img src="/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/PuTTYConnect.jpg" alt="嗯，你滴PuTTY"><br>后来想了想还是用他自己的IDE吧，功能集成还不错</p><h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p><a href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/ide">这儿</a>下载，找一下最新版就行。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> AI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pwnagotchi</title>
       <link href="/2023/10/10/pwnagotchi/"/>
       <url>/2023/10/10/pwnagotchi/</url>
@@ -51,13 +72,13 @@
       
         <tags>
             
-            <tag> 人工智能 </tag>
-            
             <tag> LLM </tag>
             
             <tag> Python </tag>
             
             <tag> ChatGLM2-6B </tag>
+            
+            <tag> AI </tag>
             
         </tags>
       
@@ -83,8 +104,6 @@
         <tags>
             
             <tag> Python </tag>
-            
-            <tag> 电赛 </tag>
             
         </tags>
       

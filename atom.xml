@@ -6,7 +6,7 @@
   <link href="http://blog.rongxiaoli.top/atom.xml" rel="self"/>
   
   <link href="http://blog.rongxiaoli.top/"/>
-  <updated>2023-10-17T08:15:48.972Z</updated>
+  <updated>2023-10-25T16:41:17.238Z</updated>
   <id>http://blog.rongxiaoli.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我与K210和Micropython</title>
+    <link href="http://blog.rongxiaoli.top/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/"/>
+    <id>http://blog.rongxiaoli.top/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/</id>
+    <published>2023-10-25T13:21:40.000Z</published>
+    <updated>2023-10-25T16:41:17.238Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;大创要搞CV，我就试着搞点东西出来。&lt;br&gt;本篇重点是怎么刷入Micropython系统，默认已经有一块板子了（Maix Nano）&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;开发环境准备&quot;&gt;&lt;a href=&quot;#开发环境准备&quot; class=&quot;headerlink&quot; title=&quot;开发环境准备&quot;&gt;&lt;/a&gt;开发环境准备&lt;/h1&gt;&lt;h2 id=&quot;驱动&quot;&gt;&lt;a href=&quot;#驱动&quot; class=&quot;headerlink&quot; title=&quot;驱动&quot;&gt;&lt;/a&gt;驱动&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dl.sipeed.com/shareURL/MAIX/tools/driver&quot;&gt;这里&lt;/a&gt;，Windows要装，Linux按理来说可以自带（只要不是什么arch之类极简系统）&lt;/p&gt;
+&lt;h2 id=&quot;固件&quot;&gt;&lt;a href=&quot;#固件&quot; class=&quot;headerlink&quot; title=&quot;固件&quot;&gt;&lt;/a&gt;固件&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/sipeed/kflash_gui/releases&quot;&gt;这里&lt;/a&gt;下载刷写工具，&lt;a href=&quot;https://dl.sipeed.com/shareURL/MAIX/MaixPy/release/master&quot;&gt;这里&lt;/a&gt;下载固件。&lt;br&gt;&lt;a href=&quot;https://wiki.sipeed.com/soft/maixpy/zh/get_started/upgrade_maixpy_firmware.html#%E5%9B%BA%E4%BB%B6%E5%91%BD%E5%90%8D%E8%AF%B4%E6%98%8E&quot;&gt;这里&lt;/a&gt;讲了固件版本命名方式。&lt;/p&gt;
+&lt;p&gt;Windows下刷写工具&lt;em&gt;貌似必须以管理员权限运行&lt;/em&gt;，不然会刷写错误提示Permission denied&lt;/p&gt;
+&lt;h2 id=&quot;串口连接工具&quot;&gt;&lt;a href=&quot;#串口连接工具&quot; class=&quot;headerlink&quot; title=&quot;串口连接工具&quot;&gt;&lt;/a&gt;串口连接工具&lt;/h2&gt;&lt;p&gt;他推荐了这些：&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Python" scheme="http://blog.rongxiaoli.top/tags/Python/"/>
+    
+    <category term="AI" scheme="http://blog.rongxiaoli.top/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>pwnagotchi</title>
@@ -61,7 +85,7 @@
     <link href="http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/"/>
     <id>http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/</id>
     <published>2023-09-02T06:06:13.000Z</published>
-    <updated>2023-10-17T08:16:04.287Z</updated>
+    <updated>2023-10-25T13:23:03.662Z</updated>
     
     
     <summary type="html">&lt;p&gt;寻思要给自己搞一个能上网的GLM2-6B，就在&lt;a href=&quot;https://chatglm.cn/blog&quot;&gt;GLM官网&lt;/a&gt;找有没有友链，正好找到了这么一条：&lt;a href=&quot;https://github.com/LemonQu-GIT/ChatGLM-6B-Engineering&quot;&gt;ChatGLM-6B-Engineering&lt;/a&gt;，于是就打算在本地部署一下（我是比较讨厌语言模型不在本地的那种）。坑有点多，于是用几乎是0基础的方式写了这么一篇教程。&lt;br&gt;本篇文章使用venv来创建虚拟环境，conda创建环境的可以找别人了。&lt;/p&gt;
@@ -97,13 +121,13 @@
     <category term="人工智能" scheme="http://blog.rongxiaoli.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
     
-    <category term="人工智能" scheme="http://blog.rongxiaoli.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
     <category term="LLM" scheme="http://blog.rongxiaoli.top/tags/LLM/"/>
     
     <category term="Python" scheme="http://blog.rongxiaoli.top/tags/Python/"/>
     
     <category term="ChatGLM2-6B" scheme="http://blog.rongxiaoli.top/tags/ChatGLM2-6B/"/>
+    
+    <category term="AI" scheme="http://blog.rongxiaoli.top/tags/AI/"/>
     
   </entry>
   
@@ -112,7 +136,7 @@
     <link href="http://blog.rongxiaoli.top/2023/08/04/%E7%94%B5%E8%B5%9B/"/>
     <id>http://blog.rongxiaoli.top/2023/08/04/%E7%94%B5%E8%B5%9B/</id>
     <published>2023-08-03T16:11:22.000Z</published>
-    <updated>2023-09-05T08:02:32.000Z</updated>
+    <updated>2023-10-25T13:22:09.093Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Day-1&quot;&gt;&lt;a href=&quot;#Day-1&quot; class=&quot;headerlink&quot; title=&quot;Day 1&quot;&gt;&lt;/a&gt;Day 1&lt;/h2&gt;&lt;p&gt;我们组选了个B题，同轴电缆长度与终端负载检测&lt;br&gt;上午还真没啥事，8点等题，上午买买器材，吃个午饭&lt;/p&gt;
@@ -132,8 +156,6 @@
     
     
     <category term="Python" scheme="http://blog.rongxiaoli.top/tags/Python/"/>
-    
-    <category term="电赛" scheme="http://blog.rongxiaoli.top/tags/%E7%94%B5%E8%B5%9B/"/>
     
   </entry>
   

@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.rongxiaoli.top/2023/03/21/RongXiaoliBotv0-2-1/</loc>
+    <loc>http://blog.rongxiaoli.top/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/</loc>
     
-    <lastmod>2023-10-18</lastmod>
+    <lastmod>2023-10-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +13,25 @@
   <url>
     <loc>http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/</loc>
     
-    <lastmod>2023-10-17</lastmod>
+    <lastmod>2023-10-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.rongxiaoli.top/2023/08/04/%E7%94%B5%E8%B5%9B/</loc>
+    
+    <lastmod>2023-10-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.rongxiaoli.top/2023/03/21/RongXiaoliBotv0-2-1/</loc>
+    
+    <lastmod>2023-10-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -32,15 +50,6 @@
     <loc>http://blog.rongxiaoli.top/about/index.html</loc>
     
     <lastmod>2023-09-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.rongxiaoli.top/2023/08/04/%E7%94%B5%E8%B5%9B/</loc>
-    
-    <lastmod>2023-09-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -83,13 +92,6 @@
 
   
   <url>
-    <loc>http://blog.rongxiaoli.top/tags/RongXiaoliBot/</loc>
-    <lastmod>2023-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.rongxiaoli.top/tags/Hacking/</loc>
     <lastmod>2023-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -118,6 +120,13 @@
   </url>
   
   <url>
+    <loc>http://blog.rongxiaoli.top/tags/RongXiaoliBot/</loc>
+    <lastmod>2023-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.rongxiaoli.top/tags/LLM/</loc>
     <lastmod>2023-10-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -139,7 +148,7 @@
   </url>
   
   <url>
-    <loc>http://blog.rongxiaoli.top/tags/%E7%94%B5%E8%B5%9B/</loc>
+    <loc>http://blog.rongxiaoli.top/tags/AI/</loc>
     <lastmod>2023-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -148,14 +157,14 @@
 
   
   <url>
-    <loc>http://blog.rongxiaoli.top/categories/%E8%BD%AF%E4%BB%B6/</loc>
+    <loc>http://blog.rongxiaoli.top/categories/Hacking/</loc>
     <lastmod>2023-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.rongxiaoli.top/categories/Hacking/</loc>
+    <loc>http://blog.rongxiaoli.top/categories/%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2023-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
