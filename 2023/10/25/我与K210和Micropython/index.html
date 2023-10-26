@@ -18,7 +18,7 @@
   <title>我与K210和Micropython | 容小狸的博客</title>
   <meta name="author" content="Rong Xiaoli">
   
-  <meta name="description" content="大创要搞CV，我就试着搞点东西出来。本篇重点是怎么刷入Micropython系统，默认已经有一块板子了（Maix Nano）
+  <meta name="description" content="大创要搞CV，我就试着搞点东西出来。本篇默认已经有一块板子了（Maix Nano）
 
 开发环境准备驱动这里，Windows要装，Linux按理来说可以自带（只要不是什么arch之类极简系统）
 固件这里下载刷写工具，这里下载固件。这里讲了固件版本命名方式。
@@ -148,10 +148,10 @@ Windows下刷写工具貌似必须以管理员权限运行，不然会刷写错�
                 
     <div id="toc">
         <strong class="sidebar-title">目录</strong>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-text">开发环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8"><span class="toc-text">驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6"><span class="toc-text">固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7"><span class="toc-text">串口连接工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE"><span class="toc-text">IDE</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-text">开发环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8"><span class="toc-text">驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6"><span class="toc-text">固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E8%BF%9E%E6%8E%A5%E5%B7%A5%E5%85%B7"><span class="toc-text">串口连接工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE"><span class="toc-text">IDE</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%91%E4%B8%AA%E4%BE%8B%E7%A8%8B%E5%85%88"><span class="toc-text">跑个例程先</span></a></li></ol>
     </div>
 
-	  <p>大创要搞CV，我就试着搞点东西出来。<br>本篇重点是怎么刷入Micropython系统，默认已经有一块板子了（Maix Nano）</p>
+	  <p>大创要搞CV，我就试着搞点东西出来。<br>本篇默认已经有一块板子了（Maix Nano）</p>
 <hr>
 <h1 id="开发环境准备"><a href="#开发环境准备" class="headerlink" title="开发环境准备"></a>开发环境准备</h1><h2 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h2><p><a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/tools/driver">这里</a>，Windows要装，Linux按理来说可以自带（只要不是什么arch之类极简系统）</p>
 <h2 id="固件"><a href="#固件" class="headerlink" title="固件"></a>固件</h2><p><a target="_blank" rel="noopener" href="https://github.com/sipeed/kflash_gui/releases">这里</a>下载刷写工具，<a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/release/master">这里</a>下载固件。<br><a target="_blank" rel="noopener" href="https://wiki.sipeed.com/soft/maixpy/zh/get_started/upgrade_maixpy_firmware.html#%E5%9B%BA%E4%BB%B6%E5%91%BD%E5%90%8D%E8%AF%B4%E6%98%8E">这里</a>讲了固件版本命名方式。</p>
@@ -165,6 +165,8 @@ Windows下刷写工具貌似必须以管理员权限运行，不然会刷写错�
 </ul>
 <p>但是呢，<img src="/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/PuTTY.png" alt="PuTTY大爹"><br>PuTTY也能用<br><img src="/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/PuTTYConnect.jpg" alt="嗯，你滴PuTTY"><br>后来想了想还是用他自己的IDE吧，功能集成还不错</p>
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p><a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/ide">这儿</a>下载，找一下最新版就行。</p>
+<p>安装还是很简单的，我个人习惯改一下安装位置，除此以外基本一路下一步就OK了。</p>
+<h1 id="跑个例程先"><a href="#跑个例程先" class="headerlink" title="跑个例程先"></a>跑个例程先</h1><p>用的<a target="_blank" rel="noopener" href="https://maixhub.com/model/zoo/63">这个</a>，这个需要机器码，<a target="_blank" rel="noopener" href="https://maixhub.com/share/6">这篇</a>已经讲的很详细了。</p>
 
 	  <div class="article-footer-copyright">
 

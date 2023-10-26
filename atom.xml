@@ -6,7 +6,7 @@
   <link href="http://blog.rongxiaoli.top/atom.xml" rel="self"/>
   
   <link href="http://blog.rongxiaoli.top/"/>
-  <updated>2023-10-25T16:41:17.238Z</updated>
+  <updated>2023-10-25T17:23:10.787Z</updated>
   <id>http://blog.rongxiaoli.top/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="http://blog.rongxiaoli.top/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/"/>
     <id>http://blog.rongxiaoli.top/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/</id>
     <published>2023-10-25T13:21:40.000Z</published>
-    <updated>2023-10-25T16:41:17.238Z</updated>
+    <updated>2023-10-25T17:23:10.787Z</updated>
     
     
-    <summary type="html">&lt;p&gt;大创要搞CV，我就试着搞点东西出来。&lt;br&gt;本篇重点是怎么刷入Micropython系统，默认已经有一块板子了（Maix Nano）&lt;/p&gt;
+    <summary type="html">&lt;p&gt;大创要搞CV，我就试着搞点东西出来。&lt;br&gt;本篇默认已经有一块板子了（Maix Nano）&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;开发环境准备&quot;&gt;&lt;a href=&quot;#开发环境准备&quot; class=&quot;headerlink&quot; title=&quot;开发环境准备&quot;&gt;&lt;/a&gt;开发环境准备&lt;/h1&gt;&lt;h2 id=&quot;驱动&quot;&gt;&lt;a href=&quot;#驱动&quot; class=&quot;headerlink&quot; title=&quot;驱动&quot;&gt;&lt;/a&gt;驱动&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dl.sipeed.com/shareURL/MAIX/tools/driver&quot;&gt;这里&lt;/a&gt;，Windows要装，Linux按理来说可以自带（只要不是什么arch之类极简系统）&lt;/p&gt;
 &lt;h2 id=&quot;固件&quot;&gt;&lt;a href=&quot;#固件&quot; class=&quot;headerlink&quot; title=&quot;固件&quot;&gt;&lt;/a&gt;固件&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/sipeed/kflash_gui/releases&quot;&gt;这里&lt;/a&gt;下载刷写工具，&lt;a href=&quot;https://dl.sipeed.com/shareURL/MAIX/MaixPy/release/master&quot;&gt;这里&lt;/a&gt;下载固件。&lt;br&gt;&lt;a href=&quot;https://wiki.sipeed.com/soft/maixpy/zh/get_started/upgrade_maixpy_firmware.html#%E5%9B%BA%E4%BB%B6%E5%91%BD%E5%90%8D%E8%AF%B4%E6%98%8E&quot;&gt;这里&lt;/a&gt;讲了固件版本命名方式。&lt;/p&gt;
@@ -85,36 +85,18 @@
     <link href="http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/"/>
     <id>http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/</id>
     <published>2023-09-02T06:06:13.000Z</published>
-    <updated>2023-10-25T13:23:03.662Z</updated>
+    <updated>2023-10-26T04:40:17.041Z</updated>
     
     
     <summary type="html">&lt;p&gt;寻思要给自己搞一个能上网的GLM2-6B，就在&lt;a href=&quot;https://chatglm.cn/blog&quot;&gt;GLM官网&lt;/a&gt;找有没有友链，正好找到了这么一条：&lt;a href=&quot;https://github.com/LemonQu-GIT/ChatGLM-6B-Engineering&quot;&gt;ChatGLM-6B-Engineering&lt;/a&gt;，于是就打算在本地部署一下（我是比较讨厌语言模型不在本地的那种）。坑有点多，于是用几乎是0基础的方式写了这么一篇教程。&lt;br&gt;本篇文章使用venv来创建虚拟环境，conda创建环境的可以找别人了。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&quot;0x0-拉代码&quot;&gt;&lt;a href=&quot;#0x0-拉代码&quot; class=&quot;headerlink&quot; title=&quot;0x0 拉代码&quot;&gt;&lt;/a&gt;0x0 拉代码&lt;/h2&gt;&lt;h2 id=&quot;到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。&quot;&gt;&lt;a href=&quot;#到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。&quot; class=&quot;headerlink&quot; title=&quot;到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。&quot;&gt;&lt;/a&gt;到这个工程的仓库拉下代码，解压到一个文件夹。&lt;br&gt;创建一个命令行窗口，然后cd到你的目录。&lt;br&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;rem Go to your working dir. &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; /D D:&#92;&lt;span class=&quot;built_in&quot;&gt;path&lt;/span&gt;&#92;to&#92;your&#92;workspace&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/h2&gt;&lt;h2 id=&quot;0x1-创建环境&quot;&gt;&lt;a href=&quot;#0x1-创建环境&quot; class=&quot;headerlink&quot; title=&quot;0x1 创建环境&quot;&gt;&lt;/a&gt;0x1 创建环境&lt;/h2&gt;&lt;h2 id=&quot;然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖：&quot;&gt;&lt;a href=&quot;#然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖：&quot; class=&quot;headerlink&quot; title=&quot;然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖：&quot;&gt;&lt;/a&gt;然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：&lt;br&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;rem Run python to create venv. &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;python -m venv .&#92;venv&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：&lt;br&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;rem Set the cache dir. &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; TMPDIR=D:&#92;your&#92;cache&#92;&lt;span class=&quot;built_in&quot;&gt;dir&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;然后再在同一窗口安装执行：&lt;br&gt;pip安装依赖：&lt;br&gt;&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install -r requirements.txt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/h2&gt;&lt;h2 id=&quot;0x2-使用模型搭建GLM层API&quot;&gt;&lt;a href=&quot;#0x2-使用模型搭建GLM层API&quot; class=&quot;headerlink&quot; title=&quot;0x2 使用模型搭建GLM层API&quot;&gt;&lt;/a&gt;0x2 使用模型搭建GLM层API&lt;/h2&gt;&lt;p&gt;接下来GLM模型就已经基本可以使用了。&lt;br&gt;ChatGLM有量化，可以在稍微性能不足一点的电脑上运行：&lt;br&gt;以下内容摘自&lt;a href=&quot;https://github.com/THUDM/ChatGLM-6B#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F&quot;&gt;ChatGLM-6B的README.md&lt;/a&gt;:&lt;/p&gt;
-&lt;h3 id=&quot;硬件需求&quot;&gt;&lt;a href=&quot;#硬件需求&quot; class=&quot;headerlink&quot; title=&quot;硬件需求&quot;&gt;&lt;/a&gt;硬件需求&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;量化等级&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;最低 GPU 显存&lt;/strong&gt;（推理）&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;最低 GPU 显存&lt;/strong&gt;（高效参数微调）&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;FP16（无量化）&lt;/td&gt;
-&lt;td&gt;13 GB&lt;/td&gt;
-&lt;td&gt;14 GB&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;INT8&lt;/td&gt;
-&lt;td&gt;8 GB&lt;/td&gt;
-&lt;td&gt;9 GB&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;INT4&lt;/td&gt;
-&lt;td&gt;6 GB&lt;/td&gt;
-&lt;td&gt;7 GB&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;</summary>
+&lt;h2 id=&quot;0x0-拉代码&quot;&gt;&lt;a href=&quot;#0x0-拉代码&quot; class=&quot;headerlink&quot; title=&quot;0x0 拉代码&quot;&gt;&lt;/a&gt;0x0 拉代码&lt;/h2&gt;&lt;p&gt;到这个工程的仓库拉下代码，解压到一个文件夹。&lt;br&gt;创建一个命令行窗口，然后cd到你的目录。&lt;/p&gt;
+&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;rem Go to your working dir. &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; /D D:&#92;&lt;span class=&quot;built_in&quot;&gt;path&lt;/span&gt;&#92;to&#92;your&#92;workspace&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&quot;0x1-创建环境&quot;&gt;&lt;a href=&quot;#0x1-创建环境&quot; class=&quot;headerlink&quot; title=&quot;0x1 创建环境&quot;&gt;&lt;/a&gt;0x1 创建环境&lt;/h2&gt;&lt;p&gt;然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：&lt;/p&gt;
+&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;rem Run python to create venv. &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;python -m venv .&#92;venv&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：&lt;/p&gt;</summary>
     
     
     

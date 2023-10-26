@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.rongxiaoli.top/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/</loc>
+    <loc>http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/</loc>
     
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://blog.rongxiaoli.top/2023/09/02/%E4%BA%8EWindows%E4%B8%8A%E9%83%A8%E7%BD%B2ChatGLM2-6B%20%E4%BB%A5%E5%8F%8A%E5%85%B6WebUI/</loc>
+    <loc>http://blog.rongxiaoli.top/2023/10/25/%E6%88%91%E4%B8%8EK210%E5%92%8CMicropython/</loc>
     
     <lastmod>2023-10-25</lastmod>
     
@@ -85,71 +85,71 @@
 
   <url>
     <loc>http://blog.rongxiaoli.top/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>http://blog.rongxiaoli.top/tags/RongXiaoliBot/</loc>
+    <lastmod>2023-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.rongxiaoli.top/tags/Hacking/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/tags/Pwn/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/tags/Pwnagotchi/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-    <lastmod>2023-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.rongxiaoli.top/tags/RongXiaoliBot/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/tags/LLM/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/tags/Python/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/tags/ChatGLM2-6B/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/tags/AI/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -157,29 +157,29 @@
 
   
   <url>
-    <loc>http://blog.rongxiaoli.top/categories/Hacking/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <loc>http://blog.rongxiaoli.top/categories/%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.rongxiaoli.top/categories/%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <loc>http://blog.rongxiaoli.top/categories/Hacking/</loc>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

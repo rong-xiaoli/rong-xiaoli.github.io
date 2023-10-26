@@ -160,7 +160,7 @@
   <div class="row">
 	
 	
-		<p>大创要搞CV，我就试着搞点东西出来。<br>本篇重点是怎么刷入Micropython系统，默认已经有一块板子了（Maix Nano）</p>
+		<p>大创要搞CV，我就试着搞点东西出来。<br>本篇默认已经有一块板子了（Maix Nano）</p>
 <hr>
 <h1 id="开发环境准备"><a href="#开发环境准备" class="headerlink" title="开发环境准备"></a>开发环境准备</h1><h2 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h2><p><a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/tools/driver">这里</a>，Windows要装，Linux按理来说可以自带（只要不是什么arch之类极简系统）</p>
 <h2 id="固件"><a href="#固件" class="headerlink" title="固件"></a>固件</h2><p><a target="_blank" rel="noopener" href="https://github.com/sipeed/kflash_gui/releases">这里</a>下载刷写工具，<a target="_blank" rel="noopener" href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/release/master">这里</a>下载固件。<br><a target="_blank" rel="noopener" href="https://wiki.sipeed.com/soft/maixpy/zh/get_started/upgrade_maixpy_firmware.html#%E5%9B%BA%E4%BB%B6%E5%91%BD%E5%90%8D%E8%AF%B4%E6%98%8E">这里</a>讲了固件版本命名方式。</p>
@@ -236,31 +236,13 @@
 	
 		<p>寻思要给自己搞一个能上网的GLM2-6B，就在<a target="_blank" rel="noopener" href="https://chatglm.cn/blog">GLM官网</a>找有没有友链，正好找到了这么一条：<a target="_blank" rel="noopener" href="https://github.com/LemonQu-GIT/ChatGLM-6B-Engineering">ChatGLM-6B-Engineering</a>，于是就打算在本地部署一下（我是比较讨厌语言模型不在本地的那种）。坑有点多，于是用几乎是0基础的方式写了这么一篇教程。<br>本篇文章使用venv来创建虚拟环境，conda创建环境的可以找别人了。</p>
 <hr>
-<h2 id="0x0-拉代码"><a href="#0x0-拉代码" class="headerlink" title="0x0 拉代码"></a>0x0 拉代码</h2><h2 id="到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。"><a href="#到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。" class="headerlink" title="到这个工程的仓库拉下代码，解压到一个文件夹。创建一个命令行窗口，然后cd到你的目录。"></a>到这个工程的仓库拉下代码，解压到一个文件夹。<br>创建一个命令行窗口，然后cd到你的目录。<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">rem Go to your working dir. </span></span><br><span class="line"><span class="built_in">cd</span> /D D:\<span class="built_in">path</span>\to\your\workspace</span><br></pre></td></tr></table></figure></h2><h2 id="0x1-创建环境"><a href="#0x1-创建环境" class="headerlink" title="0x1 创建环境"></a>0x1 创建环境</h2><h2 id="然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖："><a href="#然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖：" class="headerlink" title="然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：然后再在同一窗口安装执行：pip安装依赖："></a>然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">rem Run python to create venv. </span></span><br><span class="line">python -m venv .\venv</span><br></pre></td></tr></table></figure><br>确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">rem Set the cache dir. </span></span><br><span class="line"><span class="built_in">set</span> TMPDIR=D:\your\cache\<span class="built_in">dir</span></span><br></pre></td></tr></table></figure><br>然后再在同一窗口安装执行：<br>pip安装依赖：<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></h2><h2 id="0x2-使用模型搭建GLM层API"><a href="#0x2-使用模型搭建GLM层API" class="headerlink" title="0x2 使用模型搭建GLM层API"></a>0x2 使用模型搭建GLM层API</h2><p>接下来GLM模型就已经基本可以使用了。<br>ChatGLM有量化，可以在稍微性能不足一点的电脑上运行：<br>以下内容摘自<a target="_blank" rel="noopener" href="https://github.com/THUDM/ChatGLM-6B#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F">ChatGLM-6B的README.md</a>:</p>
-<h3 id="硬件需求"><a href="#硬件需求" class="headerlink" title="硬件需求"></a>硬件需求</h3><table>
-<thead>
-<tr>
-<th><strong>量化等级</strong></th>
-<th><strong>最低 GPU 显存</strong>（推理）</th>
-<th><strong>最低 GPU 显存</strong>（高效参数微调）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>FP16（无量化）</td>
-<td>13 GB</td>
-<td>14 GB</td>
-</tr>
-<tr>
-<td>INT8</td>
-<td>8 GB</td>
-<td>9 GB</td>
-</tr>
-<tr>
-<td>INT4</td>
-<td>6 GB</td>
-<td>7 GB</td>
-</tr>
-</tbody></table>
+<h2 id="0x0-拉代码"><a href="#0x0-拉代码" class="headerlink" title="0x0 拉代码"></a>0x0 拉代码</h2><p>到这个工程的仓库拉下代码，解压到一个文件夹。<br>创建一个命令行窗口，然后cd到你的目录。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">rem Go to your working dir. </span></span><br><span class="line"><span class="built_in">cd</span> /D D:\<span class="built_in">path</span>\to\your\workspace</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="0x1-创建环境"><a href="#0x1-创建环境" class="headerlink" title="0x1 创建环境"></a>0x1 创建环境</h2><p>然后创建python虚拟环境（有些人极度讨厌虚拟环境可以跳过，此处使用venv而不是conda是因为我比较讨厌conda）：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">rem Run python to create venv. </span></span><br><span class="line">python -m venv .\venv</span><br></pre></td></tr></table></figure>
+<p>确保缓存的盘足够，如果不能的话，就会报pip没有足够的空间安装，你需要这么做：</p>
 	
 	</div>
   <a type="button" href="/2023/09/02/于Windows上部署ChatGLM2-6B 以及其WebUI/#more" class="btn btn-default more">Read More</a>
@@ -420,23 +402,23 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/RongXiaoliBot/">RongXiaoliBot<span>1</span></a></li>
+			<li><a href="/tags/Hacking/">Hacking<span>1</span></a></li>
 		
-			<li><a href="/tags/Pwnagotchi/">Pwnagotchi<span>1</span></a></li>
-		
-			<li><a href="/tags/人工智能/">人工智能<span>1</span></a></li>
+			<li><a href="/tags/ChatGLM2-6B/">ChatGLM2-6B<span>1</span></a></li>
 		
 			<li><a href="/tags/Python/">Python<span>3</span></a></li>
 		
-			<li><a href="/tags/Hacking/">Hacking<span>1</span></a></li>
-		
-			<li><a href="/tags/AI/">AI<span>2</span></a></li>
-		
-			<li><a href="/tags/Pwn/">Pwn<span>1</span></a></li>
+			<li><a href="/tags/RongXiaoliBot/">RongXiaoliBot<span>1</span></a></li>
 		
 			<li><a href="/tags/LLM/">LLM<span>1</span></a></li>
 		
-			<li><a href="/tags/ChatGLM2-6B/">ChatGLM2-6B<span>1</span></a></li>
+			<li><a href="/tags/Pwnagotchi/">Pwnagotchi<span>1</span></a></li>
+		
+			<li><a href="/tags/AI/">AI<span>2</span></a></li>
+		
+			<li><a href="/tags/人工智能/">人工智能<span>1</span></a></li>
+		
+			<li><a href="/tags/Pwn/">Pwn<span>1</span></a></li>
 		
 		 
 		</ul>
