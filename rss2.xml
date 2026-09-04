@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>小狸的博客</title>
+    <link>http://blog.rongxiaoli.top/</link>
+    
+    <image>
+      <url>http://blog.rongxiaoli.top/profile.png</url>
+      <title>小狸的博客</title>
+      <link>http://blog.rongxiaoli.top/</link>
+    </image>
+    
+    <atom:link href="http://blog.rongxiaoli.top/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Sun, 26 Jul 2026 14:29:11 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>如何让Agent自动写博客</title>
+      <link>http://blog.rongxiaoli.top/2026/07/26/Agent-dialogue-summary-blog/</link>
+      <guid>http://blog.rongxiaoli.top/2026/07/26/Agent-dialogue-summary-blog/</guid>
+      <pubDate>Sun, 26 Jul 2026 14:35:03 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;最近在用AI的时候，老是出一些比较低级的问题。我就想着除了让AI用记忆系统记下来，我自己也得时不时翻一翻这些问题。
+于是，我想着让Aleph（我的AI
+Assistant）自己写一个博客，总结我和它搞出来的结论。
+这下算是AI自动写博客了。&lt;!-- spoiler-1ffd9:black --&gt;&lt;span class=&quot;spoiler&quot; onclick=&quot;this.classList.toggle(&#39;spoiler&#39;)&quot;&gt;&lt;span class=&quot;spoiler-box</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/nodejs/">nodejs</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Blog/">Blog</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/LLM/">LLM</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/AI-Agents/">AI Agents</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2026/07/26/Agent-dialogue-summary-blog/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>更换NetworkManager的检测URI</title>
+      <link>http://blog.rongxiaoli.top/2026/07/24/NetworkManager-detect-change/</link>
+      <guid>http://blog.rongxiaoli.top/2026/07/24/NetworkManager-detect-change/</guid>
+      <pubDate>Fri, 24 Jul 2026 21:24:37 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;每次需要连接到含有Captive Portal（强制认证）的网络时，我的Arch
+Linux会弹出需要登录的提示。但是点击之后，跳转到Firefox（我的默认浏览器），就会提示不可信，然后又打开一个新页面，跳转到Firefox的detect
+portal。这种跳转方式非常不优雅，那么有什么办法能够统一Captive Portal
+Detection的URI呢？&lt;/p&gt;
+&lt;h2 id=&quot;networkmanager&quot;&gt;NetworkManager&lt;/h2&gt;
+&lt;p&gt;方法是有的。见&lt;a</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%A5%87%E5%A6%99%E5%B0%8F%E6%95%99%E7%A8%8B/">奇妙小教程</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Linux/">Linux</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Arch/">Arch</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2026/07/24/NetworkManager-detect-change/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>YOLO v8n 踩的坑</title>
+      <link>http://blog.rongxiaoli.top/2026/05/05/YOLO-v8/</link>
+      <guid>http://blog.rongxiaoli.top/2026/05/05/YOLO-v8/</guid>
+      <pubDate>Tue, 05 May 2026 23:30:14 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;准备魔改YOLO v8，实现一个基于YOLO
+v8的实时交通标识检测系统，这篇文章就是记录一下步骤。
+那么问题来了，我甚至都没有做过视觉模型的项目，我该怎么做呢？&lt;/p&gt;
+&lt;p&gt;那么首先从YOLO v8开始，学习它的架构和实现。&lt;/p&gt;
+&lt;h2 id=&quot;准备工作&quot;&gt;准备工作&lt;/h2&gt;
+&lt;h3 id=&quot;wsl-配置&quot;&gt;WSL 配置&lt;/h3&gt;
+&lt;p&gt;Windows主力机就用的WSL2，可以直接按照 &lt;a class=&quot;link&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/OpenSource/">OpenSource</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Python/">Python</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/AI/">AI</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Machine-Vision/">Machine Vision</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2026/05/05/YOLO-v8/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>博客部署迁移</title>
+      <link>http://blog.rongxiaoli.top/2026/04/15/blog-deploy-migration/</link>
+      <guid>http://blog.rongxiaoli.top/2026/04/15/blog-deploy-migration/</guid>
+      <pubDate>Wed, 15 Apr 2026 21:23:04 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;有点不满足于GitHub
+Pages在中国大陆地区的访问速度了，于是决定简简单单迁移一下博客。&lt;/p&gt;
+&lt;p&gt;GitHub Pages迁出非常简单，将GitHub Pages中的deploy
+branch切换为None就可以了。但是迁入到哪儿呢？
+看到有人建议vercel,于是我先试试看。现在的网站就是全权交给vercel部署的。&lt;/p&gt;
+&lt;p&gt;先就这么写，估计后期还要更新。&lt;/p&gt;
+&lt;p&gt;2026-04-16</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Hexo/">Hexo</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/FrontEnd/">FrontEnd</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2026/04/15/blog-deploy-migration/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>解决Arch上VRChat抽风问题</title>
+      <link>http://blog.rongxiaoli.top/2026/02/20/Arch%20VRChat/</link>
+      <guid>http://blog.rongxiaoli.top/2026/02/20/Arch%20VRChat/</guid>
+      <pubDate>Fri, 20 Feb 2026 19:10:38 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;最近沉迷VRChat&lt;del&gt;当小南梁&lt;/del&gt;和朋友玩，但并不一定随时在台式机边，不能用满血VRChat，于是就想着能不能用Arch运行VRC。
+用Proton运行VRChat的桌面端已经比较完美了，但VR模式下就会有一堆问题，我们一个一个说明。&lt;/p&gt;
+&lt;h2 id=&quot;设备&quot;&gt;设备&lt;/h2&gt;
+&lt;p&gt;我的设备是Pico 4 Ultra，自己的Pico Connect并不支持Arch</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%A5%87%E5%A6%99%E5%B0%8F%E6%95%99%E7%A8%8B/">奇妙小教程</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Arch/">Arch</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/VRChat/">VRChat</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Gaming/">Gaming</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2026/02/20/Arch%20VRChat/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Arch 使用AirPods的一些解决方法</title>
+      <link>http://blog.rongxiaoli.top/2025/12/01/Arch%20AirPods/</link>
+      <guid>http://blog.rongxiaoli.top/2025/12/01/Arch%20AirPods/</guid>
+      <pubDate>Mon, 01 Dec 2025 04:23:31 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;我是中度苹果生态&lt;del&gt;受害者&lt;/del&gt;享受者。我正在用的是苹果的手机，以及AirPods
+Pro 2。但是电脑端我使用的是Arch Linux，那么问题来了：如何使用Arch
+Linux连接AirPods Pro 2，并且使用AirPods的苹果生态的功能？&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;请注意，这篇文章由于我没有安卓系统，因此我无法验证安卓部分的内容。&lt;/em&gt;&lt;/p&gt;
+&lt;h2</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%A5%87%E5%A6%99%E5%B0%8F%E6%95%99%E7%A8%8B/">奇妙小教程</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Linux/">Linux</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/BlueTooth/">BlueTooth</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2025/12/01/Arch%20AirPods/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>生活小妙招之如何屏蔽CSDN</title>
+      <link>http://blog.rongxiaoli.top/2025/11/26/Block%20CSDN/</link>
+      <guid>http://blog.rongxiaoli.top/2025/11/26/Block%20CSDN/</guid>
+      <pubDate>Wed, 26 Nov 2025 03:52:36 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%A5%87%E5%A6%99%E5%B0%8F%E6%95%99%E7%A8%8B/">奇妙小教程</category>
+      
+      
+      
+      <comments>http://blog.rongxiaoli.top/2025/11/26/Block%20CSDN/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>华为 Mindspore 随笔</title>
+      <link>http://blog.rongxiaoli.top/2025/11/25/huawei-jottings/</link>
+      <guid>http://blog.rongxiaoli.top/2025/11/25/huawei-jottings/</guid>
+      <pubDate>Tue, 25 Nov 2025 06:31:18 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;这是去华为Mindspore交大训练营的一个随笔，随便写点&lt;/p&gt;
+&lt;h2 id=&quot;mindspore-yolo-v8-微调&quot;&gt;Mindspore YOLO v8 微调&lt;/h2&gt;
+&lt;p&gt;Mindspore中有相对应的Yolo实现，那么直接拿来用： &lt;a class=&quot;link&quot; href=&quot;https://github.com/mindspore-lab/mindyolo&quot;&gt;MindYolo&lt;i class=&quot;fa-solid fa-arrow-up-right ml-[0.2em]</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Python/">Python</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/AI/">AI</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2025/11/25/huawei-jottings/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>http://blog.rongxiaoli.top/2025/11/11/Vue/</link>
+      <guid>http://blog.rongxiaoli.top/2025/11/11/Vue/</guid>
+      <pubDate>Tue, 11 Nov 2025 06:31:18 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;请注意： 正在更新中。
+&lt;strong&gt;这篇文章没有ToC，没有次级标题，没有基础行文，读的下去我敬你，你是这个👍&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;前端，&lt;strong&gt;狗都不&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;学，狗不学我学。&lt;/p&gt;
+&lt;figure&gt;
+&lt;img lazyload=&quot;&quot; src=&quot;/images/loading.svg&quot; data-src=&quot;miyu.png&quot; alt=&quot;我的表情：&quot;&gt;
+&lt;figcaption</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/nodejs/">nodejs</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Vue/">Vue</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Vite/">Vite</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/FrontEnd/">FrontEnd</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2025/11/11/Vue/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>BitWarden自托管的二三事</title>
+      <link>http://blog.rongxiaoli.top/2025/08/19/Bitwarden-selfhosting/</link>
+      <guid>http://blog.rongxiaoli.top/2025/08/19/Bitwarden-selfhosting/</guid>
+      <pubDate>Tue, 19 Aug 2025 04:46:12 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;缘由&quot;&gt;缘由&lt;/h2&gt;
+&lt;p&gt;最近想把Windows上Edge浏览器的密码和iPhone上的密码结合起来，就想着能有一个可以同步的密码管理器。
+但是我又不希望密码上云，那就只能选一个可以自托管的密码管理器了，于是就找到了Bitwarden。
+Home Assistant
+OS有一个插件系统，也就是加载项。其中的插件会以docker的形式安装在系统内。其中就有一个Vaultwarden。这就是我们需要的插件。&lt;/p&gt;
+&lt;h2 id=&quot;vaultwarden-部署&quot;&gt;Vaultwarden</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%A5%87%E5%A6%99%E5%B0%8F%E6%95%99%E7%A8%8B/">奇妙小教程</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Bitwarden/">Bitwarden</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Docker/">Docker</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/SSL/">SSL</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2025/08/19/Bitwarden-selfhosting/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>出刀了</title>
+      <link>http://blog.rongxiaoli.top/2025/04/23/CS2-knife/</link>
+      <guid>http://blog.rongxiaoli.top/2025/04/23/CS2-knife/</guid>
+      <pubDate>Wed, 23 Apr 2025 16:45:18 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;没什么事，纯炫耀而已&lt;/p&gt;
+&lt;figure&gt;
+&lt;img lazyload=&quot;&quot; src=&quot;/images/loading.svg&quot; data-src=&quot;01.png&quot; alt=&quot;预览界面&quot;&gt;
+&lt;figcaption aria-hidden=&quot;true&quot;&gt;预览界面&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;img lazyload=&quot;&quot; src=&quot;/images/loading.svg&quot; data-src=&quot;02.png&quot; alt=&quot;具体磨损&quot;&gt;
+&lt;figcaption</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</category>
+      
+      
+      
+      <comments>http://blog.rongxiaoli.top/2025/04/23/CS2-knife/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>博客搬迁记</title>
+      <link>http://blog.rongxiaoli.top/2025/04/13/Blog-refactor/</link>
+      <guid>http://blog.rongxiaoli.top/2025/04/13/Blog-refactor/</guid>
+      <pubDate>Sun, 13 Apr 2025 21:32:30 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;起因&quot;&gt;起因&lt;/h2&gt;
+&lt;p&gt;总是觉得自己博客丑得慌，我就寻思给自己换个主题。那既然主题都换了，索性整体博客写作仓库也上传到GitHub，到时候我在任意电脑上都可以写博客，岂不美哉？&lt;/p&gt;
+&lt;h2 id=&quot;过程&quot;&gt;过程&lt;/h2&gt;
+&lt;h3 id=&quot;初始化新博客&quot;&gt;1. 初始化新博客&lt;/h3&gt;
+&lt;p&gt;最简单的一步，直接进行一个hexo的安装：&lt;/p&gt;
+&lt;div class=&quot;code-container&quot; data-rel=&quot;Shell&quot;&gt;&lt;figure class=&quot;iseeu</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%A5%87%E5%A6%99%E5%B0%8F%E6%95%99%E7%A8%8B/">奇妙小教程</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Hexo/">Hexo</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/OpenSource/">OpenSource</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2025/04/13/Blog-refactor/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>最近困扰我的Java类加载问题</title>
+      <link>http://blog.rongxiaoli.top/2025/01/01/Java-class-load/</link>
+      <guid>http://blog.rongxiaoli.top/2025/01/01/Java-class-load/</guid>
+      <pubDate>Wed, 01 Jan 2025 18:38:58 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;在ArisuBot项目中，需要加载各个功能，这总不可能使用硬编码来使吧……就想到了注解。尝试只用一个注解就可以加载类，写一下一些坑：&lt;/p&gt;
+&lt;h2 id=&quot;x0-类扫描&quot;&gt;0x0 类扫描&lt;/h2&gt;
+&lt;h3 id=&quot;x00-初版&quot;&gt;0x00 初版&lt;/h3&gt;
+&lt;p&gt;其实是AI给出的主意，大体看起来貌似没什么毛病：&lt;/p&gt;
+&lt;div class=&quot;code-container&quot; data-rel=&quot;Java&quot;&gt;&lt;figure class=&quot;iseeu highlight</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Java/">Java</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2025/01/01/Java-class-load/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Linus剔除了俄罗斯开发者，接下来是谁？</title>
+      <link>http://blog.rongxiaoli.top/2024/10/27/Linux-6e90b67/</link>
+      <guid>http://blog.rongxiaoli.top/2024/10/27/Linux-6e90b67/</guid>
+      <pubDate>Sun, 27 Oct 2024 14:26:28 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;10月18日，开源社区迎来了一个重磅炸弹：Linus和Greg在毫无预兆的情况下，以一个含糊其词的原因开除了数十名邮箱域名为.ru的开发者。这对开源社区无疑是晴天霹雳。&lt;/p&gt;
+&lt;p&gt;Greg Kroah-Hartman, Fri, 18 Oct 2024:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Remove some entries due to various compliance requirements. They can
+come back in the future if</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Linux/">Linux</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/OpenSource/">OpenSource</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2024/10/27/Linux-6e90b67/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>与Debian的相识相知</title>
+      <link>http://blog.rongxiaoli.top/2024/09/19/Debian-install/</link>
+      <guid>http://blog.rongxiaoli.top/2024/09/19/Debian-install/</guid>
+      <pubDate>Thu, 19 Sep 2024 17:00:21 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;说来话长，个人有些喜欢网络安全方面，于是接触了Kali。众所周知Kali也算Debian系，所以对Debian（系操作系统）颇有好感（笑）
+但是Kali对日用，虽说不是不行，但终究也是专用系统，日用会有意想不到的奇妙bug，因此还是转回了Debian。
+欸有人就会说了，啊Debian这么落后的软件包，不如用Ubuntu，我的评价是：
+&lt;strong&gt;因为我贱，怎么，你不服气？&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;x0-安装操作系统&quot;&gt;0x0</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%A5%87%E5%A6%99%E5%B0%8F%E6%95%99%E7%A8%8B/">奇妙小教程</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/System/">System</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Debian/">Debian</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2024/09/19/Debian-install/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>pwnagotchi</title>
+      <link>http://blog.rongxiaoli.top/2023/10/09/pwnagotchi/</link>
+      <guid>http://blog.rongxiaoli.top/2023/10/09/pwnagotchi/</guid>
+      <pubDate>Mon, 09 Oct 2023 16:21:53 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;pwnagotchi&quot;&gt;Pwnagotchi&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&quot;link&quot; href=&quot;https://pwnagotchi.ai&quot;&gt;官网&lt;i class=&quot;fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+这个小东西可耗精力了，不知道为什么老是有问题，或许是我墨水屏买新了？以及进不去MANU
+mode，可能是驱动？</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/Hacking/">Hacking</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/AI/">AI</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Hacking/">Hacking</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Pwn/">Pwn</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Pwnagotchi/">Pwnagotchi</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2023/10/09/pwnagotchi/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>于Windows上部署ChatGLM2-6B 以及其WebUI</title>
+      <link>http://blog.rongxiaoli.top/2023/09/02/Windows-chatglm2-6b-webui/</link>
+      <guid>http://blog.rongxiaoli.top/2023/09/02/Windows-chatglm2-6b-webui/</guid>
+      <pubDate>Sat, 02 Sep 2023 06:06:13 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;寻思要给自己搞一个能上网的GLM2-6B，就在&lt;a class=&quot;link&quot; href=&quot;https://chatglm.cn/blog&quot;&gt;GLM官网&lt;i class=&quot;fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;找有没有友链，正好找到了这么一条：&lt;a class=&quot;link&quot;</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/LLM/">LLM</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Python/">Python</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/ChatGLM2-6B/">ChatGLM2-6B</category>
+      
+      <category domain="http://blog.rongxiaoli.top/tags/AI/">AI</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2023/09/02/Windows-chatglm2-6b-webui/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>电赛</title>
+      <link>http://blog.rongxiaoli.top/2023/08/03/TI-cup/</link>
+      <guid>http://blog.rongxiaoli.top/2023/08/03/TI-cup/</guid>
+      <pubDate>Thu, 03 Aug 2023 16:11:22 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;day-1&quot;&gt;Day 1&lt;/h2&gt;
+&lt;p&gt;我们组选了个B题，同轴电缆长度与终端负载检测
+上午还真没啥事，8点等题，上午买买器材，吃个午饭&lt;/p&gt;
+&lt;p&gt;同轴电缆长度测定原理： &amp;gt;
+向同轴电缆发一道脉冲，由于一端开路，同轴电缆会反弹一道脉冲，这就意味着在同轴线一端测量波形，我们能得到两个波形：一个是发射波，一个是反弹波。&lt;/p&gt;
+&lt;p&gt;GitHub上捞了个&lt;a class=&quot;link&quot; href=&quot;https:github.com/hugen79/NanoVNA-H&quot;&gt;代码&lt;i</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/">随笔和笔记</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E9%9A%8F%E7%AC%94%E5%92%8C%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/Python/">Python</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2023/08/03/TI-cup/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>RongXiaoliBotv0.2.1</title>
+      <link>http://blog.rongxiaoli.top/2023/03/20/RongXiaoliBotv0-2-1/</link>
+      <guid>http://blog.rongxiaoli.top/2023/03/20/RongXiaoliBotv0-2-1/</guid>
+      <pubDate>Mon, 20 Mar 2023 16:30:27 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1 id=&quot;容小狸bot-v0.2.1更新日志&quot;&gt;容小狸bot v0.2.1更新日志&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;工程中&quot;&gt;工程中&lt;/h2&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt;梗图生成器（得先找到API）&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt;osu!bot(插件名称OsuBot)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input</description>
+          
+        
+      
+      
+      
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E8%BD%AF%E4%BB%B6%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">软件更新日志</category>
+      
+      <category domain="http://blog.rongxiaoli.top/categories/%E8%BD%AF%E4%BB%B6%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/RongXiaoliBot-ArisuBot/">RongXiaoliBot &amp; ArisuBot</category>
+      
+      
+      <category domain="http://blog.rongxiaoli.top/tags/RongXiaoliBot/">RongXiaoliBot</category>
+      
+      
+      <comments>http://blog.rongxiaoli.top/2023/03/20/RongXiaoliBotv0-2-1/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>第一篇post</title>
+      <link>http://blog.rongxiaoli.top/2023/03/01/FirstPost/</link>
+      <guid>http://blog.rongxiaoli.top/2023/03/01/FirstPost/</guid>
+      <pubDate>Wed, 01 Mar 2023 12:40:31 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h1</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>http://blog.rongxiaoli.top/2023/03/01/FirstPost/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>

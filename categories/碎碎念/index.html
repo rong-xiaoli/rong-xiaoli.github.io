@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    
+    <meta name="author" content="容小狸">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes ASAP (before DOMContentLoaded)
+            (function() {
+                const addBodyClass = () => {
+                    const b = document.body;
+                    if (!b) return false;
+                    b.classList.add(theme + "-mode");
+                    return true;
+                };
+
+                // Try immediately
+                if (addBodyClass()) return;
+
+                // Observe until body exists
+                const mo = new MutationObserver(() => {
+                    if (addBodyClass()) mo.disconnect();
+                });
+                mo.observe(document.documentElement, { childList: true, subtree: true });
+            })();
+        })();
+    </script>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://blog.rongxiaoli.top/categories/碎碎念/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+        
+        <meta name="description" content="某人的小小避风港">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小狸的博客">
+<meta property="og:url" content="http://blog.rongxiaoli.top/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/index.html">
+<meta property="og:site_name" content="小狸的博客">
+<meta property="og:description" content="某人的小小避风港">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.rongxiaoli.top/images/redefine-og.webp">
+<meta property="article:author" content="rong-xiaoli">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.rongxiaoli.top/images/redefine-og.webp">
+    
+    
+        <!-- Google tag (gtag.js) -->
+        <script src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-70812759-1');
+        </script>
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+    <meta name="theme-color" content="#14a5c4">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            分类: 碎碎念 | 容小狸的博客
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        
+<script src="/js/build/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"blog.rongxiaoli.top","root":"/","language":"zh-CN","path":"search.json"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#14a5c4","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"少女祈祷中……\n"},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"某人的小小避风港"},"google_analytics":{"enable":true,"id":"UA-70812759-1"}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/banner-light.png","dark":"/images/banner-dark.png"},"title":"小狸的博客","subtitle":{"text":["某人的小小避风港"],"hitokoto":{"enable":true,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":false,"smart_backspace":true},"text_color":{"light":"#CCFFFF","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":[{"icon":"fa-brands fa-github","url":"https://github.com/rong-xiaoli"},{"icon":"fa-solid fa-at","url":"hashnoob079@163.com"},{"icon":"fa-brands fa-bilibili","url":"https://space.bilibili.com/411654866"},{"icon":"fa-brands fa-telegram","url":null},{"icon":"/images/custom-icon.svg","url":null}],"qrs":null}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"Intro + A Moment Apart","artist":"ODESZA","url":"https://music.163.com/song/media/outer/url?id=2047848296.mp3","cover":"/songs/2047848296-cover.jpg","lrc":"/songs/2047848296.lrc"},{"name":"Overthinker","artist":"INZO","url":"https://music.163.com/song/media/outer/url?id=1311091060.mp3","cover":"/songs/1311091060-cover.jpg","lrc":"/songs/1311091060.lrc"},{"name":"Tojita Sekai","artist":"かめりあ","url":"https://music.163.com/song/media/outer/url?id=1336689106.mp3","cover":"/songs/1336689106-cover.jpg","lrc":"/songs/1336689106.lrc"},{"name":"Beyond The Peak","artist":"Chime / Skybreak / DNAKM","url":"https://music.163.com/song/media/outer/url?id=2020508184.mp3","cover":"/songs/2020508184-cover.jpg","lrc":"/songs/2020508184.lrc"},{"name":"Lifeline","artist":"Mazare / Monika Santucci","url":"https://music.163.com/song/media/outer/url?id=1947845417.mp3","cover":"/songs/1947845417-cover.jpg","lrc":"/songs/1947845417.lrc"},{"name":"resolve // once","artist":"sprigtek / Syris / venus rose","url":"https://music.163.com/song/media/outer/url?id=1937854148.mp3","cover":"/songs/1937854148-cover.jpg","lrc":"/songs/1937854148.lrc"},{"name":"gettin' hott","artist":"Knock2","url":"https://music.163.com/song/media/outer/url?id=1937369865.mp3","cover":"/songs/1937369865-cover.jpg","lrc":"/songs/1937369865.lrc"},{"name":"Take Me (To The Moon)","artist":"Ian Asher / D A N N Y","url":"https://music.163.com/song/media/outer/url?id=3389580180.mp3","cover":"/songs/3389580180-cover.jpg","lrc":"/songs/3389580180.lrc"}]},"mermaid":{"enable":true,"version":"11.4.1","theme":{"light":"default","dark":"dark"}}},"version":"2.9.0","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-solid fa-house"},"Posts":{"icon":"fa-solid fa-file-lines","path":"/archives","submenus":{"Tags":"/tags","Categories":"/categories","Archives":"/archives"}},"VRChat":{"icon":"fa-solid fa-vr-cardboard","path":"/vrchat"},"Talks":{"path":"/talks","icon":"fa-solid fa-comment"},"About":{"icon":"fa-solid fa-user","path":"/about","submenus":{"Me":"/about","GitHub":"https://github.com/rong-xiaoli","Recent Activity":"/recent-activity","Links":"/links","GPG Public key":"/gpg-pubkey","RSS":"/rss2.xml","Atom":"/atom.xml"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur","masonry":{"batch_size":12,"initial_batch_size":24}},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"欢迎呀～","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"RSS":{"path":"/rss2.xml","icon":"fa-solid fa-rss"},"Recent Activity":{"path":"/RecentActivity","icon":"fa-solid fa-clock-rotate-left"},"Talks":{"path":"/talks","icon":"fa-regular fa-comment"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footer":{"runtime":true,"icon":"<i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-animation-duration: 0.5s; color: #f54545\"></i>","start":"2022/8/17 11:45:14","statistics":true,"customize":"<p style=\"color:rgba(128, 128, 128, 0.01);\">看不见我awa</p>\n本博客采用GitHub Actions实现自动部署<br/>\n<a href=\"https://travel.moe/go.html?travel=on\" title=\"异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！\" target=\"_blank\" style=\"display: block; width: fit-content; margin: 0 auto; text-align: center;\">\n  <img alt=\"Static Badge\" src=\"https://img.shields.io/badge/%E5%BC%82%E6%AC%A1%E5%85%83%E4%B9%8B%E6%97%85-51c4d3?style=flat&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC%2FxhBQAACklpQ0NQc1JHQiBJRUM2MTk2Ni0yLjEAAEiJnVN3WJP3Fj7f92UPVkLY8LGXbIEAIiOsCMgQWaIQkgBhhBASQMWFiApWFBURnEhVxILVCkidiOKgKLhnQYqIWotVXDjuH9yntX167%2B3t%2B9f7vOec5%2FzOec8PgBESJpHmomoAOVKFPDrYH49PSMTJvYACFUjgBCAQ5svCZwXFAADwA3l4fnSwP%2FwBr28AAgBw1S4kEsfh%2F4O6UCZXACCRAOAiEucLAZBSAMguVMgUAMgYALBTs2QKAJQAAGx5fEIiAKoNAOz0ST4FANipk9wXANiiHKkIAI0BAJkoRyQCQLsAYFWBUiwCwMIAoKxAIi4EwK4BgFm2MkcCgL0FAHaOWJAPQGAAgJlCLMwAIDgCAEMeE80DIEwDoDDSv%2BCpX3CFuEgBAMDLlc2XS9IzFLiV0Bp38vDg4iHiwmyxQmEXKRBmCeQinJebIxNI5wNMzgwAABr50cH%2BOD%2BQ5%2Bbk4eZm52zv9MWi%2FmvwbyI%2BIfHf%2FryMAgQAEE7P79pf5eXWA3DHAbB1v2upWwDaVgBo3%2FldM9sJoFoK0Hr5i3k4%2FEAenqFQyDwdHAoLC%2B0lYqG9MOOLPv8z4W%2Fgi372%2FEAe%2Ftt68ABxmkCZrcCjg%2F1xYW52rlKO58sEQjFu9%2Bcj%2FseFf%2F2OKdHiNLFcLBWK8ViJuFAiTcd5uVKRRCHJleIS6X8y8R%2BW%2FQmTdw0ArIZPwE62B7XLbMB%2B7gECiw5Y0nYAQH7zLYwaC5EAEGc0Mnn3AACTv%2FmPQCsBAM2XpOMAALzoGFyolBdMxggAAESggSqwQQcMwRSswA6cwR28wBcCYQZEQAwkwDwQQgbkgBwKoRiWQRlUwDrYBLWwAxqgEZrhELTBMTgN5%2BASXIHrcBcGYBiewhi8hgkEQcgIE2EhOogRYo7YIs4IF5mOBCJhSDSSgKQg6YgUUSLFyHKkAqlCapFdSCPyLXIUOY1cQPqQ28ggMor8irxHMZSBslED1AJ1QLmoHxqKxqBz0XQ0D12AlqJr0Rq0Hj2AtqKn0UvodXQAfYqOY4DRMQ5mjNlhXIyHRWCJWBomxxZj5Vg1Vo81Yx1YN3YVG8CeYe8IJAKLgBPsCF6EEMJsgpCQR1hMWEOoJewjtBK6CFcJg4Qxwicik6hPtCV6EvnEeGI6sZBYRqwm7iEeIZ4lXicOE1%2BTSCQOyZLkTgohJZAySQtJa0jbSC2kU6Q%2B0hBpnEwm65Btyd7kCLKArCCXkbeQD5BPkvvJw%2BS3FDrFiOJMCaIkUqSUEko1ZT%2FlBKWfMkKZoKpRzame1AiqiDqfWkltoHZQL1OHqRM0dZolzZsWQ8ukLaPV0JppZ2n3aC%2FpdLoJ3YMeRZfQl9Jr6Afp5%2BmD9HcMDYYNg8dIYigZaxl7GacYtxkvmUymBdOXmchUMNcyG5lnmA%2BYb1VYKvYqfBWRyhKVOpVWlX6V56pUVXNVP9V5qgtUq1UPq15WfaZGVbNQ46kJ1Bar1akdVbupNq7OUndSj1DPUV%2Bjvl%2F9gvpjDbKGhUaghkijVGO3xhmNIRbGMmXxWELWclYD6yxrmE1iW7L57Ex2Bfsbdi97TFNDc6pmrGaRZp3mcc0BDsax4PA52ZxKziHODc57LQMtPy2x1mqtZq1%2BrTfaetq%2B2mLtcu0W7eva73VwnUCdLJ31Om0693UJuja6UbqFutt1z%2Bo%2B02PreekJ9cr1Dund0Uf1bfSj9Rfq79bv0R83MDQINpAZbDE4Y%2FDMkGPoa5hpuNHwhOGoEctoupHEaKPRSaMnuCbuh2fjNXgXPmasbxxirDTeZdxrPGFiaTLbpMSkxeS%2BKc2Ua5pmutG003TMzMgs3KzYrMnsjjnVnGueYb7ZvNv8jYWlRZzFSos2i8eW2pZ8ywWWTZb3rJhWPlZ5VvVW16xJ1lzrLOtt1ldsUBtXmwybOpvLtqitm63Edptt3xTiFI8p0in1U27aMez87ArsmuwG7Tn2YfYl9m32zx3MHBId1jt0O3xydHXMdmxwvOuk4TTDqcSpw%2BlXZxtnoXOd8zUXpkuQyxKXdpcXU22niqdun3rLleUa7rrStdP1o5u7m9yt2W3U3cw9xX2r%2B00umxvJXcM970H08PdY4nHM452nm6fC85DnL152Xlle%2B70eT7OcJp7WMG3I28Rb4L3Le2A6Pj1l%2Bs7pAz7GPgKfep%2BHvqa%2BIt89viN%2B1n6Zfgf8nvs7%2Bsv9j%2Fi%2F4XnyFvFOBWABwQHlAb2BGoGzA2sDHwSZBKUHNQWNBbsGLww%2BFUIMCQ1ZH3KTb8AX8hv5YzPcZyya0RXKCJ0VWhv6MMwmTB7WEY6GzwjfEH5vpvlM6cy2CIjgR2yIuB9pGZkX%2BX0UKSoyqi7qUbRTdHF09yzWrORZ%2B2e9jvGPqYy5O9tqtnJ2Z6xqbFJsY%2BybuIC4qriBeIf4RfGXEnQTJAntieTE2MQ9ieNzAudsmjOc5JpUlnRjruXcorkX5unOy553PFk1WZB8OIWYEpeyP%2BWDIEJQLxhP5aduTR0T8oSbhU9FvqKNolGxt7hKPJLmnVaV9jjdO31D%2BmiGT0Z1xjMJT1IreZEZkrkj801WRNberM%2FZcdktOZSclJyjUg1plrQr1zC3KLdPZisrkw3keeZtyhuTh8r35CP5c%2FPbFWyFTNGjtFKuUA4WTC%2BoK3hbGFt4uEi9SFrUM99m%2Fur5IwuCFny9kLBQuLCz2Lh4WfHgIr9FuxYji1MXdy4xXVK6ZHhp8NJ9y2jLspb9UOJYUlXyannc8o5Sg9KlpUMrglc0lamUycturvRauWMVYZVkVe9ql9VbVn8qF5VfrHCsqK74sEa45uJXTl%2FVfPV5bdra3kq3yu3rSOuk626s91m%2Fr0q9akHV0IbwDa0b8Y3lG19tSt50oXpq9Y7NtM3KzQM1YTXtW8y2rNvyoTaj9nqdf13LVv2tq7e%2B2Sba1r%2Fdd3vzDoMdFTve75TsvLUreFdrvUV99W7S7oLdjxpiG7q%2F5n7duEd3T8Wej3ulewf2Re%2FranRvbNyvv7%2ByCW1SNo0eSDpw5ZuAb9qb7Zp3tXBaKg7CQeXBJ9%2BmfHvjUOihzsPcw83fmX%2B39QjrSHkr0jq%2Fdawto22gPaG97%2BiMo50dXh1Hvrf%2Ffu8x42N1xzWPV56gnSg98fnkgpPjp2Snnp1OPz3Umdx590z8mWtdUV29Z0PPnj8XdO5Mt1%2F3yfPe549d8Lxw9CL3Ytslt0utPa49R35w%2FeFIr1tv62X3y%2B1XPK509E3rO9Hv03%2F6asDVc9f41y5dn3m978bsG7duJt0cuCW69fh29u0XdwruTNxdeo94r%2Fy%2B2v3qB%2FoP6n%2B0%2FrFlwG3g%2BGDAYM%2FDWQ%2FvDgmHnv6U%2F9OH4dJHzEfVI0YjjY%2BdHx8bDRq98mTOk%2BGnsqcTz8p%2BVv9563Or59%2F94vtLz1j82PAL%2BYvPv655qfNy76uprzrHI8cfvM55PfGm%2FK3O233vuO%2B638e9H5ko%2FED%2BUPPR%2BmPHp9BP9z7nfP78L%2FeE8%2FstRzjPAAAAIGNIUk0AAHomAACAhAAA%2BgAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAMAUExURUxpcf%2FIiP%2FIh%2F%2FIh%2BOxj%2F7Eid1oG%2Becb%2Fescf%2FHhHCBwOp%2BXv%2FIh%2BJrLv%2FHhuVzPOuBYP%2FLjeFqMP7Fhv%2FHiP%2FIiHSEv7t%2FbHCBv95pGv%2FIh%2F3Ijel%2BXep8Xet%2BXep9XXKDwN1oG%2F%2FFjt1oG3GFwO6BXP%2FLi%2FCYYet%2BXv7EhOZrJv%2FLh%2F%2FJh%2B%2BNZHmJw7aTnf3Kg%2Bp%2FYOl8XdxoG9toHP3Hif%2FIh%2F%2FGh%2F%2FKhux7X%2F%2FHh3KEwOaDQ9xoG%2BuDYeR5XHKDv3KDwHODut1oG9tpGuyKZXKDvut9Xd1oHP7HhttpGnOEwviyeO12V%2F%2FHiOd2SHWBuPetd%2F%2FHiP7Ghf%2FHhul%2BXttoGf3PjExpcf%2FHh%2BuBX52bt%2BV2WnGDwe13Xet5W%2B1uU91pHPSictpiHv%2FHh%2F7Hhv%2FHh%2B5kTfOhckxpcXKDv%2Bl8Xv%2FPi%2F3lxeN0XmSRudtmGv%2FHhf%2FFg%2F%2FJif%2FHh%2F%2FDl%2F%2FJh%2F%2FNiXKDv%2Bl%2BYPNSPKOZqZmVsUxpcf%2FHh3KDv%2F%2Fn0%2F%2FPn%2F%2FPnctEOv%2Fn0f%2F%2F%2F%2F%2Fp1v%2FLif%2FJiXCCwP%2FJh%2F%2FPm%2F%2FRoOt%2BXv%2FRoctBOP%2Fq0%2F%2FNmf%2FOi%2F%2FHhd1oHMk%2BNv%2Feu%2F%2Fmzv%2FVpP%2FTnel3Wv%2F9%2B%2F%2FNm%2F%2FVqf%2FYsf%2FFg%2F%2FMjf%2FJjf%2FLkv%2FTof%2Fkyel7XP%2F27Op8Xmt7vPWkc%2F%2F59P%2Ft3P%2Fx4v%2F%2F%2Fv%2FOl%2F%2FHifOgb%2F%2FOlP%2FhxOuEYsk7NPiwef%2Fbt%2F%2Fy5W1%2Bv%2F7Hh%2F%2FSoe%2BOZ%2BuBX2p9wPand3uJwfi2ff%2Fv3%2F%2FZqe2HY%2Fu%2FjoKLvc5IPP%2Fs2f3Kmv%2Ft1au12dJRQvGWbGyBwvWofvCSbNxoUfe0ieaGY4ORxvKbcf7NnfWvhvq6gOXBpfi5jf%2F06dVXRXKDwZKUt991WXSEv%2BV1WcHJ4860qb6trv%2Ffv9%2FNx%2F%2FjxvCdePvBk%2BbAm%2Bjq9Y%2BczMfN5euTaKSdtYqUxf3Bg9fd7e%2Fx%2BcPL5emPcP%2FTmcXL5fX1%2B6Gt1e3Rte%2FHo6%2Bjrevt9f3BhemVdNW5qU5abAgAAAB%2BdFJOUwC5H44JSv4CDBj%2BsdQI9hu8ay79W8JaCMSg8P75W%2B%2FG9OMslo5FlRLkhCPNqy0XEER3bjq47N07cYPbpRWM5fzZ5bvvr%2F1unvVSdUYod6hdQrOjNnaXZNgAnSdv9iemZbzOr03msflQ5wDL7fFOQEpoUH6dNlRO%2Byyrh%2FHvAIGMl3UAAAAJcEhZcwAACxMAAAsTAQCanBgAAAlOSURBVFiF1ZdrUJTXGcd%2F77s32F3uyz2AEG5ulRUSQQY00XgBE6Vx1zZDtCGZSdI2zaSZxPQ6Sdo0zSSm1iYzzUyTKGmmNhNZbVor9RKbVKhCFEGUNYKCcl2B3YVlFxZ29%2B2HXRDBS772%2BfS%2B5zz%2F33nO9TkH%2Fu9NNv2RV2zTaO43fuX7hsLSNZ7BWYBve1cer3tSkVSf5rrb%2Bo0Amz7U2GcAeWGqDc9UVTdT5UhbOqRv%2FyaA6MuKMQAB%2BGnjn2TVUFUdqPqP4kvPHfVh2uFH940EAFuPnKiGqupiNm0DquDpw3fSx2c3QF5IHcgweP9eDXiGMhMe7gKam5uPPdYQ8FMpFP4Hu%2BUxrhtbz%2FRFtK0aje6ISYyakGEoWdIMxSUrI3WhhkdLAJZ8dLcVsdCdOhgiGlzDorwiV3lNmtar7rHpW1eJZ4wRXy0aWCzPy9wK2%2FlCe5ALW6qDA%2FHPHW3%2B3I4dY9nXm%2F1V2hHXePC7txeyDzbbOEaMENdQDcX3f3ztRyrnuS%2BCHhv3H%2Freq3vm9HtzSlijHyBnkKjuVa6e3jypUy9kHqG6OHnhm0%2B3Wok8EfRVF%2Bp3JUd0QYpsRApXB0srSehzegFUyrhuyHO3geyRkuqqS2GNDw90WoZ6phv7bXJeb8%2FAQ00T1wamhuSqIS0ACc8v%2F0dlugXwCWLhlUe72gCxDarJuDB%2B3jIr2lcQtgjUmDBRLvU23%2BsaAChBvcfUrVMBHquSf10CkKXbISt9RGYfmgWY2v7sH9VeLFiwYGpru7a6XVQEqlbhdPhBVRbmHAQQJWDTREpoZNXsAdtGvFsyqU2SSW2qNQnUdF51XwxUGXdKcvDsDrcDIIrA%2Bc8vF52onqXfXnUXYC6vNdWVHi03SwKmqauv9gURb0gqGPnUBoBMtqOZ5oeOllQ1zwKsiXIvT%2BqqOLj%2B4AMDTsvGNtOVrKxrK%2FyZfc7%2BGEjQXy3xJwuB5Sk8eP4x5tmK%2FP6DsggBJJa3KjodgiREGD%2BKy%2FN0%2BkmClvUt4nsZw2F7ALEnY2vVXP32jLHjmkcmPX19kypQrDZhUhcdLo0%2BOlgcMwwwpH%2Fv8tGnmjbkgECcel4IK%2FJPXrFPAij9OQ6S0w66BULdS6POReOb8CXRErt%2FQd3wh1TIR0SuyedGsCJkPMbjl4McP%2B1EuxrGTZJx3NR%2BWLTqLvoBQ9KphqaQl%2FZ%2FtixeAIN29Rz9gp4TYwBeuTd%2BSZ8t%2B3jBKWMNAsajuRcJbrAy1QQpG0tfloE1%2BvSZnTNzUJyxQLf3wmRgjhHHhY6kr%2FzW5LMVFslknoh64f6YgF%2FoffWMLsy3yoEW4oqrY2GQWAbDCv3bvfJpnLdyb64Ub%2FUqE1CX10LOtukdnrBP5UEIPRI4lV0ZA%2F3FDpXKq0uUf5zZPiFO67PrWfnluB9bVmSWeWMblhRtsCp1dNjts6W3BF3PRr%2FbnxkTs%2FQvu1MKdzlmAlDK4wo%2BBeRKby9qNCYpYmaoMgs8Kp2hcjqxOF7%2Fr%2FVKY7uLE2MeYcZJshfVA6LXN%2Bg%2Fu968sVapnzmwE%2FeMeJz6fUFAjn3J%2B7llbS6MV9J7RK4TOgHwy2PkSbquBPmyLm9wV1IvTqwr%2FrM%2F6DylePMNyQwS4ijzTe7Vh%2FnaSlNDepNmDp2SBaGdGaOjwe52H%2BCJpyRTjXATNbDcWgdczGWx1toXPGrrXQWhvw%2FrDkagreR1hBpBglXKefp7htrjCqLTNIttrbtd43cFdrX2D92fbZ0kCHh8D7%2FAqDEKOE9NztXnusla1D%2BZv%2BaAzJKuUnRoAVoMlie0B6zT2dkRl1i0ura8dqPZ5OwVY8bxyoWZTBItei4I3vwD%2BsyIQd%2BYf3thDLQQ0l9%2Frp1gBKW5b5Nw0GUurw119seLutwMfWzs8mmAuLiL8J4wzObDjtdCQ3dlw5mxNH%2F8%2BCSB7EyE94PwswWunBrBeHRKne5sB8jVHb%2FeC29qkTndpW9DPZINnMl3%2BP2aXYc8IAfil1RpNTLGwFirTrY3ERex5JJaeWhmQSIWdNTFZYWzQrZfDTT9oGcITWjWoWAEBdvq%2Br4PNEjrbGeIi%2Fz6gVlaADFKaS%2BPtro%2FpyzGcsklLJvqdN7VKf7MB8hhsVt7orWwAAwtYW05yfY0%2FZd4ZxG8yiiVrdz3QTTQSOFYpMPZv%2FfH50VDuB0QUeVuN7evcwA%2FNJqLFta1gztOLnqv61NVzvi049E2G9hsjRlv%2B0eXvnPWYGAMQIZe%2F0DT6a74fKhot1u61meYLRtPJ5tOy6f8fr9fLui%2Bc86tKu3tDaQBxgeeF9Ubogvglwo7IEeescJH%2BBRAvN3hrhEkzBR9krpW%2FGw4Jiy8Rzkit2ZkvWebjkjpGL30YgFwSqXygKgqM6RPeqx9ALxl0pgkAaNkXucf%2BUSZqBzrUErmYs3gyutDYpuCAgBxwgPIdCdzjrl8KMe%2FBVSYlrWYrlTUVrRZRi0builOy2wc1TiFyGc7pm8nRCcK13TA5twBALnbb4jtht6TmwGe23m41o27RpAEySwJZtTpXM5aYGOWKSYBKlMuBKbY%2BdybwzngKa8EMOxaK0m1RowatWZZRnp6eumavA1Z52pHbdNnIWkKoxsgbAIAmSrJviMktZVG9xYAKnr13iHlsHZwpeoerc4wceHCon%2FLDFKhfyDYg05V%2FiJgT39gomW%2BVr%2B0%2FsOsTbaRMFd%2Ff%2F9A4gs7i0PTY3T3%2BX6S0juYdDxsYWQkmxYJcZpJ2SRa7WT5RHci0NYfuJYLQNakr7rlnUr7SlSZE8heetkx6lpbLxK7rGtSFt91PNvRn%2F91XupAgxJbWcappgJgizPQg8BuLHVfTniSJL8L1h4mLFb167d8PeExzu%2B%2BkW0d6S0AoKnAsVD7%2BL7WExQAm8enmAUAVbZDl3mkrsND7Dia%2BMSGM5IgIeS3hM7cNZs0AOQAcGgHNwJABULquy0%2BAEE0cFt7oWNiHgAgJ%2BeZ2wsDVv%2Ba4J%2F5kc2uGb4qt6feGfDz%2BFkL6wYAXkvEvXfUl61smPU3N5OETGn23l5f%2Fbfx2b%2FzU5Eu%2B5XbyPeeO%2BW9oeAmueyhi2O7byHffL%2FCPKfopslQseHkzRDm98uOzXuO3SKbFo12izeOxeZFQ52SbP5z7hYACH32d0%2F8deFvAHh81CVG2RR3fgzOMZX4ouJ5na5c8aIov7P37VG3rvof%2BLyqbqOKcqQAAAAASUVORK5CYII%3D&logoSize=auto&labelColor=282726\">\n</a>\n    \n","icp":{"enable":true,"number":"萌 ICP 备 20253992 号","url":"https://icp.gov.moe/?keyword=20253992"}},"footerStart":"2022/8/17 11:45:14","mermaid":{"style":{"light":"default","dark":"dark"}}};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.i18n = {"search":"站内搜索您需要的内容...","toc":"目录","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","post":"文章","posts":"文章","tagcloud":"标签云","comment":"评论","comments":"评论","top":"置顶","sticky":"置顶","go-back-home":"回到首页","masonry_loading":"照片加载中...","image_viewer":"图片查看器","close":"关闭","exif":{"title":"EXIF","cards":{"camera":"相机","lens":"镜头","exposure":"曝光","other":"其他"},"fields":{"make":"品牌","model":"机型","date_taken":"拍摄时间","lens_model":"镜头","focal_length":"焦距","focus_mode":"对焦模式","shutter":"快门","aperture":"光圈","iso":"感光度","exposure_program":"曝光程序","exposure_compensation":"曝光补偿","metering_mode":"测光模式","flash":"闪光灯","white_balance":"白平衡","latitude":"纬度","longitude":"经度","altitude":"海拔"},"status":{"loading":"加载中...","no_exif":"无 EXIF 信息","library_missing":"EXIF 库未加载","image_source_missing":"图片地址不可用","unavailable":"EXIF 不可用（可能被 CORS 阻止或缺少元数据）","flag_unavailable":"EXIF 不可用"}},"home":"首页","archive":"归档","archives":"归档","about":"关于","links":"链接","link":"链接","friends":"友情链接","friend":"友情链接","timeline":"时间轴","shuoshuo":"说说","bookmarks":"书签","site_uv":"访问人数","site_pv":"总访问量","read_more":"阅读全文","wordcount":"字","min2read":"分钟","changelog":"更新日志","status":"状态","runtime":"博客已运行","days":"天","hours":"小时","minutes":"分钟","seconds":"秒","optimized_by":"并由 Evan 进行优化","rights":"版权所有","site_posts":"共撰写了 %s 篇文章","site_wordcount":"共 %s 字","copyright":{"title":"标题","author":"作者","link":"链接","create_time":"创建于","update_time":"更新于","license_title":"版权声明","license_content":"本文章采用 %s 进行许可。","all_rights_reserved":"版权所有 &#169 %s，禁止转载。","public_domain":"本文为公有领域作品，可自由转载、引用。"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"},"create_time":"创建","update_time":"更新","expired":"这篇文章最后更新于 %s 天前，内容可能已经过时。"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><style type="text/css">
+.spoiler {
+  display: inline;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style><meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="小狸的博客" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="小狸的博客" type="application/rss+xml">
+<script id="redefine-title-script">
+(function(){var cfg={"hiddenTitle":"(/-\\\\) 别走嘛…","visibleTitle":"(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 欢迎回来！","timeout":2000},orig=document.title,timer=null;
+function up(){orig=document.title;}
+function vc(){if(document.hidden){document.title=cfg.hiddenTitle;
+if(timer){clearTimeout(timer);timer=null;}}else{document.title=cfg.visibleTitle;
+timer=setTimeout(function(){document.title=orig;timer=null;},cfg.timeout);}}
+document.addEventListener('visibilitychange',vc,false);
+function hs(s){if(s&&s.hooks){s.hooks.on('page:view',up);}}
+if(window.swup&&window.swup.hooks)hs(window.swup);
+document.addEventListener('redefine:swup:ready',function(e){hs(e.detail&&e.detail.swup);});
+window.addEventListener('load',up,{once:true});
+})();</script>
+</head>
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        少女祈祷中……
+
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/logo.png" class="w-full h-full rounded-xs">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                容小狸的博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-solid fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-file-lines fa-fw"></i>
+                                    文章
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    标签
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    分类
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    归档
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/vrchat"
+                                        >
+                                    <i class="fa-solid fa-vr-cardboard fa-fw"></i>
+                                    VRCHAT
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/talks"
+                                        >
+                                    <i class="fa-solid fa-comment fa-fw"></i>
+                                    TALKS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-solid fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/rong-xiaoli">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/recent-activity">
+                                                    RECENT ACTIVITY
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/links">
+                                                    链接
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/gpg-pubkey">
+                                                    GPG PUBLIC KEY
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/rss2.xml">
+                                                    RSS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/atom.xml">
+                                                    ATOM
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-solid fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Posts"
+                        >
+                            <span>
+                                文章
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Posts">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">标签</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">分类</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">归档</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/vrchat"
+                        >
+                            <span>
+                                VRCHAT
+                            </span>
+                            
+                                <i class="fa-solid fa-vr-cardboard fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/talks"
+                        >
+                            <span>
+                                TALKS
+                            </span>
+                            
+                                <i class="fa-solid fa-comment fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/rong-xiaoli">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/recent-activity">RECENT ACTIVITY</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/links">链接</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/gpg-pubkey">GPG PUBLIC KEY</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/rss2.xml">RSS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/atom.xml">ATOM</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/rss2.xml"
+                        >
+                            <span>RSS</span>
+                            <i class="fa-solid fa-rss fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/RecentActivity"
+                        >
+                            <span>Recent Activity</span>
+                            <i class="fa-solid fa-clock-rotate-left fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">31</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">21</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="page-template-container">
+	
+
+	
+	<div class="category-name">
+    <i class="fa-solid fa-folder"></i>&nbsp;碎碎念
+</div>
+<div class="category-post-list">
+    
+<div class="archive-list-container">
+    
+        <section class="archive-item mb-spacing-unit last:mb-0">
+            <div class="archive-item-header flex flex-row items-center mb-2">
+                <span class="archive-year font-semibold text-3xl mr-2">2025</span>
+                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">1</span>
+            </div>
+            
+            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+                
+                    
+                    
+                         <!-- Close the previous LI if not the first item -->
+                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='04-24'>
+                    
+                    <a href="/2025/04/23/CS2-knife/" class="block w-fit">
+                        <span class="article-title my-0.5 text-2xl">出刀了</span>
+                    </a>
+                    
+                
+                </li> <!-- Ensure the last item is properly closed -->
+            </ul>
+        </section>
+    
+        <section class="archive-item mb-spacing-unit last:mb-0">
+            <div class="archive-item-header flex flex-row items-center mb-2">
+                <span class="archive-year font-semibold text-3xl mr-2">2024</span>
+                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">1</span>
+            </div>
+            
+            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+                
+                    
+                    
+                         <!-- Close the previous LI if not the first item -->
+                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='10-27'>
+                    
+                    <a href="/2024/10/27/Linux-6e90b67/" class="block w-fit">
+                        <span class="article-title my-0.5 text-2xl">Linus剔除了俄罗斯开发者，接下来是谁？</span>
+                    </a>
+                    
+                
+                </li> <!-- Ensure the last item is properly closed -->
+            </ul>
+        </section>
+    
+</div>
+</div>
+
+	
+
+	<div class="page-template-content markdown-body">
+		
+
+		
+	</div>
+
+	<div class="page-template-comments">
+		
+	</div>
+</div>
+
+<div class="paginator">
+	<span class="page-number current">1</span>
+</div>
+  
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1"><p style="color:rgba(128, 128, 128, 0.01);">看不见我awa</p>
+本博客采用GitHub Actions实现自动部署<br/>
+<a href="https://travel.moe/go.html?travel=on" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank" style="display: block; width: fit-content; margin: 0 auto; text-align: center;">
+  <img alt="Static Badge" src="https://img.shields.io/badge/%E5%BC%82%E6%AC%A1%E5%85%83%E4%B9%8B%E6%97%85-51c4d3?style=flat&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC%2FxhBQAACklpQ0NQc1JHQiBJRUM2MTk2Ni0yLjEAAEiJnVN3WJP3Fj7f92UPVkLY8LGXbIEAIiOsCMgQWaIQkgBhhBASQMWFiApWFBURnEhVxILVCkidiOKgKLhnQYqIWotVXDjuH9yntX167%2B3t%2B9f7vOec5%2FzOec8PgBESJpHmomoAOVKFPDrYH49PSMTJvYACFUjgBCAQ5svCZwXFAADwA3l4fnSwP%2FwBr28AAgBw1S4kEsfh%2F4O6UCZXACCRAOAiEucLAZBSAMguVMgUAMgYALBTs2QKAJQAAGx5fEIiAKoNAOz0ST4FANipk9wXANiiHKkIAI0BAJkoRyQCQLsAYFWBUiwCwMIAoKxAIi4EwK4BgFm2MkcCgL0FAHaOWJAPQGAAgJlCLMwAIDgCAEMeE80DIEwDoDDSv%2BCpX3CFuEgBAMDLlc2XS9IzFLiV0Bp38vDg4iHiwmyxQmEXKRBmCeQinJebIxNI5wNMzgwAABr50cH%2BOD%2BQ5%2Bbk4eZm52zv9MWi%2FmvwbyI%2BIfHf%2FryMAgQAEE7P79pf5eXWA3DHAbB1v2upWwDaVgBo3%2FldM9sJoFoK0Hr5i3k4%2FEAenqFQyDwdHAoLC%2B0lYqG9MOOLPv8z4W%2Fgi372%2FEAe%2Ftt68ABxmkCZrcCjg%2F1xYW52rlKO58sEQjFu9%2Bcj%2FseFf%2F2OKdHiNLFcLBWK8ViJuFAiTcd5uVKRRCHJleIS6X8y8R%2BW%2FQmTdw0ArIZPwE62B7XLbMB%2B7gECiw5Y0nYAQH7zLYwaC5EAEGc0Mnn3AACTv%2FmPQCsBAM2XpOMAALzoGFyolBdMxggAAESggSqwQQcMwRSswA6cwR28wBcCYQZEQAwkwDwQQgbkgBwKoRiWQRlUwDrYBLWwAxqgEZrhELTBMTgN5%2BASXIHrcBcGYBiewhi8hgkEQcgIE2EhOogRYo7YIs4IF5mOBCJhSDSSgKQg6YgUUSLFyHKkAqlCapFdSCPyLXIUOY1cQPqQ28ggMor8irxHMZSBslED1AJ1QLmoHxqKxqBz0XQ0D12AlqJr0Rq0Hj2AtqKn0UvodXQAfYqOY4DRMQ5mjNlhXIyHRWCJWBomxxZj5Vg1Vo81Yx1YN3YVG8CeYe8IJAKLgBPsCF6EEMJsgpCQR1hMWEOoJewjtBK6CFcJg4Qxwicik6hPtCV6EvnEeGI6sZBYRqwm7iEeIZ4lXicOE1%2BTSCQOyZLkTgohJZAySQtJa0jbSC2kU6Q%2B0hBpnEwm65Btyd7kCLKArCCXkbeQD5BPkvvJw%2BS3FDrFiOJMCaIkUqSUEko1ZT%2FlBKWfMkKZoKpRzame1AiqiDqfWkltoHZQL1OHqRM0dZolzZsWQ8ukLaPV0JppZ2n3aC%2FpdLoJ3YMeRZfQl9Jr6Afp5%2BmD9HcMDYYNg8dIYigZaxl7GacYtxkvmUymBdOXmchUMNcyG5lnmA%2BYb1VYKvYqfBWRyhKVOpVWlX6V56pUVXNVP9V5qgtUq1UPq15WfaZGVbNQ46kJ1Bar1akdVbupNq7OUndSj1DPUV%2Bjvl%2F9gvpjDbKGhUaghkijVGO3xhmNIRbGMmXxWELWclYD6yxrmE1iW7L57Ex2Bfsbdi97TFNDc6pmrGaRZp3mcc0BDsax4PA52ZxKziHODc57LQMtPy2x1mqtZq1%2BrTfaetq%2B2mLtcu0W7eva73VwnUCdLJ31Om0693UJuja6UbqFutt1z%2Bo%2B02PreekJ9cr1Dund0Uf1bfSj9Rfq79bv0R83MDQINpAZbDE4Y%2FDMkGPoa5hpuNHwhOGoEctoupHEaKPRSaMnuCbuh2fjNXgXPmasbxxirDTeZdxrPGFiaTLbpMSkxeS%2BKc2Ua5pmutG003TMzMgs3KzYrMnsjjnVnGueYb7ZvNv8jYWlRZzFSos2i8eW2pZ8ywWWTZb3rJhWPlZ5VvVW16xJ1lzrLOtt1ldsUBtXmwybOpvLtqitm63Edptt3xTiFI8p0in1U27aMez87ArsmuwG7Tn2YfYl9m32zx3MHBId1jt0O3xydHXMdmxwvOuk4TTDqcSpw%2BlXZxtnoXOd8zUXpkuQyxKXdpcXU22niqdun3rLleUa7rrStdP1o5u7m9yt2W3U3cw9xX2r%2B00umxvJXcM970H08PdY4nHM452nm6fC85DnL152Xlle%2B70eT7OcJp7WMG3I28Rb4L3Le2A6Pj1l%2Bs7pAz7GPgKfep%2BHvqa%2BIt89viN%2B1n6Zfgf8nvs7%2Bsv9j%2Fi%2F4XnyFvFOBWABwQHlAb2BGoGzA2sDHwSZBKUHNQWNBbsGLww%2BFUIMCQ1ZH3KTb8AX8hv5YzPcZyya0RXKCJ0VWhv6MMwmTB7WEY6GzwjfEH5vpvlM6cy2CIjgR2yIuB9pGZkX%2BX0UKSoyqi7qUbRTdHF09yzWrORZ%2B2e9jvGPqYy5O9tqtnJ2Z6xqbFJsY%2BybuIC4qriBeIf4RfGXEnQTJAntieTE2MQ9ieNzAudsmjOc5JpUlnRjruXcorkX5unOy553PFk1WZB8OIWYEpeyP%2BWDIEJQLxhP5aduTR0T8oSbhU9FvqKNolGxt7hKPJLmnVaV9jjdO31D%2BmiGT0Z1xjMJT1IreZEZkrkj801WRNberM%2FZcdktOZSclJyjUg1plrQr1zC3KLdPZisrkw3keeZtyhuTh8r35CP5c%2FPbFWyFTNGjtFKuUA4WTC%2BoK3hbGFt4uEi9SFrUM99m%2Fur5IwuCFny9kLBQuLCz2Lh4WfHgIr9FuxYji1MXdy4xXVK6ZHhp8NJ9y2jLspb9UOJYUlXyannc8o5Sg9KlpUMrglc0lamUycturvRauWMVYZVkVe9ql9VbVn8qF5VfrHCsqK74sEa45uJXTl%2FVfPV5bdra3kq3yu3rSOuk626s91m%2Fr0q9akHV0IbwDa0b8Y3lG19tSt50oXpq9Y7NtM3KzQM1YTXtW8y2rNvyoTaj9nqdf13LVv2tq7e%2B2Sba1r%2Fdd3vzDoMdFTve75TsvLUreFdrvUV99W7S7oLdjxpiG7q%2F5n7duEd3T8Wej3ulewf2Re%2FranRvbNyvv7%2ByCW1SNo0eSDpw5ZuAb9qb7Zp3tXBaKg7CQeXBJ9%2BmfHvjUOihzsPcw83fmX%2B39QjrSHkr0jq%2Fdawto22gPaG97%2BiMo50dXh1Hvrf%2Ffu8x42N1xzWPV56gnSg98fnkgpPjp2Snnp1OPz3Umdx590z8mWtdUV29Z0PPnj8XdO5Mt1%2F3yfPe549d8Lxw9CL3Ytslt0utPa49R35w%2FeFIr1tv62X3y%2B1XPK509E3rO9Hv03%2F6asDVc9f41y5dn3m978bsG7duJt0cuCW69fh29u0XdwruTNxdeo94r%2Fy%2B2v3qB%2FoP6n%2B0%2FrFlwG3g%2BGDAYM%2FDWQ%2FvDgmHnv6U%2F9OH4dJHzEfVI0YjjY%2BdHx8bDRq98mTOk%2BGnsqcTz8p%2BVv9563Or59%2F94vtLz1j82PAL%2BYvPv655qfNy76uprzrHI8cfvM55PfGm%2FK3O233vuO%2B638e9H5ko%2FED%2BUPPR%2BmPHp9BP9z7nfP78L%2FeE8%2FstRzjPAAAAIGNIUk0AAHomAACAhAAA%2BgAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAMAUExURUxpcf%2FIiP%2FIh%2F%2FIh%2BOxj%2F7Eid1oG%2Becb%2Fescf%2FHhHCBwOp%2BXv%2FIh%2BJrLv%2FHhuVzPOuBYP%2FLjeFqMP7Fhv%2FHiP%2FIiHSEv7t%2FbHCBv95pGv%2FIh%2F3Ijel%2BXep8Xet%2BXep9XXKDwN1oG%2F%2FFjt1oG3GFwO6BXP%2FLi%2FCYYet%2BXv7EhOZrJv%2FLh%2F%2FJh%2B%2BNZHmJw7aTnf3Kg%2Bp%2FYOl8XdxoG9toHP3Hif%2FIh%2F%2FGh%2F%2FKhux7X%2F%2FHh3KEwOaDQ9xoG%2BuDYeR5XHKDv3KDwHODut1oG9tpGuyKZXKDvut9Xd1oHP7HhttpGnOEwviyeO12V%2F%2FHiOd2SHWBuPetd%2F%2FHiP7Ghf%2FHhul%2BXttoGf3PjExpcf%2FHh%2BuBX52bt%2BV2WnGDwe13Xet5W%2B1uU91pHPSictpiHv%2FHh%2F7Hhv%2FHh%2B5kTfOhckxpcXKDv%2Bl8Xv%2FPi%2F3lxeN0XmSRudtmGv%2FHhf%2FFg%2F%2FJif%2FHh%2F%2FDl%2F%2FJh%2F%2FNiXKDv%2Bl%2BYPNSPKOZqZmVsUxpcf%2FHh3KDv%2F%2Fn0%2F%2FPn%2F%2FPnctEOv%2Fn0f%2F%2F%2F%2F%2Fp1v%2FLif%2FJiXCCwP%2FJh%2F%2FPm%2F%2FRoOt%2BXv%2FRoctBOP%2Fq0%2F%2FNmf%2FOi%2F%2FHhd1oHMk%2BNv%2Feu%2F%2Fmzv%2FVpP%2FTnel3Wv%2F9%2B%2F%2FNm%2F%2FVqf%2FYsf%2FFg%2F%2FMjf%2FJjf%2FLkv%2FTof%2Fkyel7XP%2F27Op8Xmt7vPWkc%2F%2F59P%2Ft3P%2Fx4v%2F%2F%2Fv%2FOl%2F%2FHifOgb%2F%2FOlP%2FhxOuEYsk7NPiwef%2Fbt%2F%2Fy5W1%2Bv%2F7Hh%2F%2FSoe%2BOZ%2BuBX2p9wPand3uJwfi2ff%2Fv3%2F%2FZqe2HY%2Fu%2FjoKLvc5IPP%2Fs2f3Kmv%2Ft1au12dJRQvGWbGyBwvWofvCSbNxoUfe0ieaGY4ORxvKbcf7NnfWvhvq6gOXBpfi5jf%2F06dVXRXKDwZKUt991WXSEv%2BV1WcHJ4860qb6trv%2Ffv9%2FNx%2F%2FjxvCdePvBk%2BbAm%2Bjq9Y%2BczMfN5euTaKSdtYqUxf3Bg9fd7e%2Fx%2BcPL5emPcP%2FTmcXL5fX1%2B6Gt1e3Rte%2FHo6%2Bjrevt9f3BhemVdNW5qU5abAgAAAB%2BdFJOUwC5H44JSv4CDBj%2BsdQI9hu8ay79W8JaCMSg8P75W%2B%2FG9OMslo5FlRLkhCPNqy0XEER3bjq47N07cYPbpRWM5fzZ5bvvr%2F1unvVSdUYod6hdQrOjNnaXZNgAnSdv9iemZbzOr03msflQ5wDL7fFOQEpoUH6dNlRO%2Byyrh%2FHvAIGMl3UAAAAJcEhZcwAACxMAAAsTAQCanBgAAAlOSURBVFiF1ZdrUJTXGcd%2F77s32F3uyz2AEG5ulRUSQQY00XgBE6Vx1zZDtCGZSdI2zaSZxPQ6Sdo0zSSm1iYzzUyTKGmmNhNZbVor9RKbVKhCFEGUNYKCcl2B3YVlFxZ29%2B2HXRDBS772%2BfS%2B5zz%2F33nO9TkH%2Fu9NNv2RV2zTaO43fuX7hsLSNZ7BWYBve1cer3tSkVSf5rrb%2Bo0Amz7U2GcAeWGqDc9UVTdT5UhbOqRv%2FyaA6MuKMQAB%2BGnjn2TVUFUdqPqP4kvPHfVh2uFH940EAFuPnKiGqupiNm0DquDpw3fSx2c3QF5IHcgweP9eDXiGMhMe7gKam5uPPdYQ8FMpFP4Hu%2BUxrhtbz%2FRFtK0aje6ISYyakGEoWdIMxSUrI3WhhkdLAJZ8dLcVsdCdOhgiGlzDorwiV3lNmtar7rHpW1eJZ4wRXy0aWCzPy9wK2%2FlCe5ALW6qDA%2FHPHW3%2B3I4dY9nXm%2F1V2hHXePC7txeyDzbbOEaMENdQDcX3f3ztRyrnuS%2BCHhv3H%2Freq3vm9HtzSlijHyBnkKjuVa6e3jypUy9kHqG6OHnhm0%2B3Wok8EfRVF%2Bp3JUd0QYpsRApXB0srSehzegFUyrhuyHO3geyRkuqqS2GNDw90WoZ6phv7bXJeb8%2FAQ00T1wamhuSqIS0ACc8v%2F0dlugXwCWLhlUe72gCxDarJuDB%2B3jIr2lcQtgjUmDBRLvU23%2BsaAChBvcfUrVMBHquSf10CkKXbISt9RGYfmgWY2v7sH9VeLFiwYGpru7a6XVQEqlbhdPhBVRbmHAQQJWDTREpoZNXsAdtGvFsyqU2SSW2qNQnUdF51XwxUGXdKcvDsDrcDIIrA%2Bc8vF52onqXfXnUXYC6vNdWVHi03SwKmqauv9gURb0gqGPnUBoBMtqOZ5oeOllQ1zwKsiXIvT%2BqqOLj%2B4AMDTsvGNtOVrKxrK%2FyZfc7%2BGEjQXy3xJwuB5Sk8eP4x5tmK%2FP6DsggBJJa3KjodgiREGD%2BKy%2FN0%2BkmClvUt4nsZw2F7ALEnY2vVXP32jLHjmkcmPX19kypQrDZhUhcdLo0%2BOlgcMwwwpH%2Fv8tGnmjbkgECcel4IK%2FJPXrFPAij9OQ6S0w66BULdS6POReOb8CXRErt%2FQd3wh1TIR0SuyedGsCJkPMbjl4McP%2B1EuxrGTZJx3NR%2BWLTqLvoBQ9KphqaQl%2FZ%2FtixeAIN29Rz9gp4TYwBeuTd%2BSZ8t%2B3jBKWMNAsajuRcJbrAy1QQpG0tfloE1%2BvSZnTNzUJyxQLf3wmRgjhHHhY6kr%2FzW5LMVFslknoh64f6YgF%2FoffWMLsy3yoEW4oqrY2GQWAbDCv3bvfJpnLdyb64Ub%2FUqE1CX10LOtukdnrBP5UEIPRI4lV0ZA%2F3FDpXKq0uUf5zZPiFO67PrWfnluB9bVmSWeWMblhRtsCp1dNjts6W3BF3PRr%2FbnxkTs%2FQvu1MKdzlmAlDK4wo%2BBeRKby9qNCYpYmaoMgs8Kp2hcjqxOF7%2Fr%2FVKY7uLE2MeYcZJshfVA6LXN%2Bg%2Fu968sVapnzmwE%2FeMeJz6fUFAjn3J%2B7llbS6MV9J7RK4TOgHwy2PkSbquBPmyLm9wV1IvTqwr%2FrM%2F6DylePMNyQwS4ijzTe7Vh%2FnaSlNDepNmDp2SBaGdGaOjwe52H%2BCJpyRTjXATNbDcWgdczGWx1toXPGrrXQWhvw%2FrDkagreR1hBpBglXKefp7htrjCqLTNIttrbtd43cFdrX2D92fbZ0kCHh8D7%2FAqDEKOE9NztXnusla1D%2BZv%2BaAzJKuUnRoAVoMlie0B6zT2dkRl1i0ura8dqPZ5OwVY8bxyoWZTBItei4I3vwD%2BsyIQd%2BYf3thDLQQ0l9%2Frp1gBKW5b5Nw0GUurw119seLutwMfWzs8mmAuLiL8J4wzObDjtdCQ3dlw5mxNH%2F8%2BCSB7EyE94PwswWunBrBeHRKne5sB8jVHb%2FeC29qkTndpW9DPZINnMl3%2BP2aXYc8IAfil1RpNTLGwFirTrY3ERex5JJaeWhmQSIWdNTFZYWzQrZfDTT9oGcITWjWoWAEBdvq%2Br4PNEjrbGeIi%2Fz6gVlaADFKaS%2BPtro%2FpyzGcsklLJvqdN7VKf7MB8hhsVt7orWwAAwtYW05yfY0%2FZd4ZxG8yiiVrdz3QTTQSOFYpMPZv%2FfH50VDuB0QUeVuN7evcwA%2FNJqLFta1gztOLnqv61NVzvi049E2G9hsjRlv%2B0eXvnPWYGAMQIZe%2F0DT6a74fKhot1u61meYLRtPJ5tOy6f8fr9fLui%2Bc86tKu3tDaQBxgeeF9Ubogvglwo7IEeescJH%2BBRAvN3hrhEkzBR9krpW%2FGw4Jiy8Rzkit2ZkvWebjkjpGL30YgFwSqXygKgqM6RPeqx9ALxl0pgkAaNkXucf%2BUSZqBzrUErmYs3gyutDYpuCAgBxwgPIdCdzjrl8KMe%2FBVSYlrWYrlTUVrRZRi0builOy2wc1TiFyGc7pm8nRCcK13TA5twBALnbb4jtht6TmwGe23m41o27RpAEySwJZtTpXM5aYGOWKSYBKlMuBKbY%2BdybwzngKa8EMOxaK0m1RowatWZZRnp6eumavA1Z52pHbdNnIWkKoxsgbAIAmSrJviMktZVG9xYAKnr13iHlsHZwpeoerc4wceHCon%2FLDFKhfyDYg05V%2FiJgT39gomW%2BVr%2B0%2FsOsTbaRMFd%2Ff%2F9A4gs7i0PTY3T3%2BX6S0juYdDxsYWQkmxYJcZpJ2SRa7WT5RHci0NYfuJYLQNakr7rlnUr7SlSZE8heetkx6lpbLxK7rGtSFt91PNvRn%2F91XupAgxJbWcappgJgizPQg8BuLHVfTniSJL8L1h4mLFb167d8PeExzu%2B%2BkW0d6S0AoKnAsVD7%2BL7WExQAm8enmAUAVbZDl3mkrsND7Dia%2BMSGM5IgIeS3hM7cNZs0AOQAcGgHNwJABULquy0%2BAEE0cFt7oWNiHgAgJ%2BeZ2wsDVv%2Ba4J%2F5kc2uGb4qt6feGfDz%2BFkL6wYAXkvEvXfUl61smPU3N5OETGn23l5f%2Fbfx2b%2FzU5Eu%2B5XbyPeeO%2BW9oeAmueyhi2O7byHffL%2FCPKfopslQseHkzRDm98uOzXuO3SKbFo12izeOxeZFQ52SbP5z7hYACH32d0%2F8deFvAHh81CVG2RR3fgzOMZX4ouJ5na5c8aIov7P37VG3rvof%2BLyqbqOKcqQAAAAASUVORK5CYII%3D&logoSize=auto&labelColor=282726">
+</a>
+    
+</div>
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2026&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">容小狸</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 21 篇文章
+                    </span>
+                    
+                        <span>
+                            共 26.8k 字
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.9.0</a></span>
+        </div>
+        
+            <div class="icp-info my-1"><a target="_blank" rel="nofollow" href="
+                
+                    https://icp.gov.moe/?keyword=20253992
+                
+                ">萌 ICP 备 20253992 号</a></div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+		<li class="right-bottom-tools rss flex justify-center items-center">
+			<a class="flex justify-center items-center" href="/atom.xml,rss2.xml" target="_blank">
+				<i class="fa-regular fa-rss"></i>
+			</a>
+		</li>
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container" role="dialog" aria-modal="true" aria-label="图片查看器">
+	<button class="image-viewer-close" type="button" aria-label="关闭">
+		<i class="fa-solid fa-xmark"></i>
+	</button>
+	<button class="image-viewer-prev" type="button" aria-label="上一页">
+		<i class="fa-solid fa-chevron-left"></i>
+	</button>
+	<div class="image-viewer-frame">
+		<img src="" alt="">
+	</div>
+	<div class="image-viewer-exif-panel hidden absolute left-1/2 bottom-20 -translate-x-1/2 w-[min(92vw,420px)] max-h-[60vh] overflow-hidden rounded-2xl bg-background-color-transparent-80 p-4 text-left shadow-redefine-flat backdrop-blur-md" role="dialog" aria-label="EXIF" aria-hidden="true">
+		<div class="flex items-center justify-between mb-3">
+			<span class="text-sm font-semibold text-first-text-color">EXIF</span>
+			<button class="image-viewer-exif-close flex h-8 w-8 items-center justify-center rounded-full bg-background-color-transparent-80 text-first-text-color transition hover:bg-background-color-transparent-40" type="button" aria-label="关闭">
+				<i class="fa-solid fa-xmark text-[0.65rem]"></i>
+			</button>
+		</div>
+		<div class="image-viewer-exif-cards grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto pr-1 scrollbar-hide"></div>
+		<template class="image-viewer-exif-card-template">
+			<div class="rounded-lg bg-background-color-transparent-40 px-3 py-2">
+				<div class="image-viewer-exif-card-header flex items-center gap-2 mb-1">
+					<i class="image-viewer-exif-card-icon fa-solid fa-circle-info text-xs text-third-text-color"></i>
+					<div class="image-viewer-exif-card-title text-xs font-semibold text-first-text-color"></div>
+				</div>
+				<div class="image-viewer-exif-card-items flex flex-col gap-1"></div>
+			</div>
+		</template>
+	</div>
+	<button class="image-viewer-exif-toggle flex items-center gap-2 hidden absolute left-1/2 bottom-6 -translate-x-1/2 rounded-full border border-border-color bg-background-color-transparent-80 px-4 py-2 text-first-text-color backdrop-blur-md transition hover:bg-background-color-transparent-40" type="button" aria-label="EXIF" aria-expanded="false">
+		<i class="fa-solid fa-circle-info text-xs"></i>
+		<span class="text-xs font-semibold uppercase tracking-wider">EXIF</span>
+	</button>
+	<button class="image-viewer-next" type="button" aria-label="下一页">
+		<i class="fa-solid fa-chevron-right"></i>
+	</button>
+</div>
+
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    window.swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+
+    window.dispatchEvent(
+        new CustomEvent("redefine:swup:ready", {
+            detail: {
+                swup: window.swup,
+            },
+        }),
+    );
+</script>
+
+
+
+	
+<script src="/js/build/main.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+
+
+
+    
+        
+<script src="/js/build/libs/mermaid.min.js"></script>
+
+    
+
+
+
+
+
+    
+<script src="/js/build/libs/minimasonry.min.js" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+    
+<script src="/js/build/libs/pangu.min.js"></script>
+
+
+
+	
+	<div id="aplayer"></div>
+
+<script src="/js/build/libs/APlayer.min.js"></script>
+
+
+<script src="/js/build/plugins/aplayer.js"></script>
+
+
+	
+</body>
+
+</html>
